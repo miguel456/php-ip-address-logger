@@ -26,6 +26,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - Config file (Better Whitelisting System, not limited to one anymore)
 - Grabbing config values from MySQL (Will replace above)
 - Interface for whitelisting addresses (After MySQL is done)
+- Add security support for apache (.htaccess) (A pull request with the .htaccess file would be nice!)
 
 # Security
 Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache.
