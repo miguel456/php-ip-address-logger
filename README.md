@@ -16,3 +16,9 @@ I decided to go ahead and write this, and set up an honeypot. This way, I know t
 If you want to, you can use this code as a base to log something; it's up to you.
 Note that I am an absolute beginner and this is my first ever repo. I don't even know if there are useful use cases other than an honeypot, and this may even be obsolete. I didn't find anything similar to use!
 --
+
+# Upcoming Features
+- Logging to MySQL
+- Config file (Better Whitelisting System, not limited to one anymore)
+- Grabbing config values from MySQL (Will replace above)
+- Interface for whitelisting addresses (After MySQL is done)
