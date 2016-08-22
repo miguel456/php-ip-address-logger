@@ -1,0 +1,18 @@
+# php-ip-address-logger
+Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. I'm planning writing data to MySQL, so you could display the data somewhere.
+
+This simple script will log someone's IP address upon visiting a page, to a file. Can be repurposed to log something else by changing a few variables.
+
+# Installation
+
+Simply drag and drop the scripts to the directory you want to log. Rename from index.php to something else if you already have one, and then make something of yours point there.
+The code will be commented so you can understand.
+
+# Uses 
+I originally created this as I was getting too many 404's to non-existent locations, such as phpMyAdmin or PMA. So, as there was no similar software to do this,
+I decided to go ahead and write this, and set up an honeypot. This way, I know their address without going through thousands of entries in the log.
+
+-- 
+If you want to, you can use this code as a base to log something; it's up to you.
+Note that I am an absolute beginner and this is my first ever repo. I don't even know if there are useful use cases other than an honeypot, and this may even be obsolete. I didn't find anything similar to use!
+--
