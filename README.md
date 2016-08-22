@@ -1,3 +1,7 @@
+# REQUIRED
+BEFORE CONTINUING, MAKE SURE THAT YOU USE IIS AND CREATE A HIDDEN SEGMENT FOR ("addresses.txt") and ("whitelist.txt")!! I DON'T SUPPORT APACHE, AND IF YOU WANT TO USE THIS THERE, MAKE SURE TO CREATE A .HTACCESS FILE DENYING ACCESS TO THEM!! I AM NOT RESPONSIBLE FOR ANY SECURITY BREACH. BE ADVISED.
+
+
 # php-ip-address-logger
 Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. I'm planning writing data to MySQL, so you could display the data somewhere.
 
@@ -22,3 +26,6 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - Config file (Better Whitelisting System, not limited to one anymore)
 - Grabbing config values from MySQL (Will replace above)
 - Interface for whitelisting addresses (After MySQL is done)
+
+# Security
+Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache.
