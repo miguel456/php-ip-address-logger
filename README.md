@@ -28,5 +28,8 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - Interface for whitelisting addresses (After MySQL is done)
 - Add security support for apache (.htaccess) (A pull request with the .htaccess file would be nice!)
 
+# Bugs, errors or feature suggestions/improvements
+Report all bugs you find (Although I think there are none :D), leave suggestions or improvement requests in a ticket. You can also start a pull request for a new feature/improvement and I'll look into it.
+
 # Security
 Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache.
