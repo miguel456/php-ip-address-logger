@@ -1,1 +1,4 @@
 0.0.0.0.0
+
+To whitelist an address: Go to the source code and type it where you see "0.0.0.0"
+^ Remove this ^ and this <
