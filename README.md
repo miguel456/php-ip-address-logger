@@ -23,7 +23,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 
 # Upcoming Features
 - Logging to MySQL
-- Config file (Better Whitelisting System, not limited to one anymore)
+- Config file (Better Whitelisting System, not limited to one anymore) - 25% Done
 - Grabbing config values from MySQL (Will replace above)
 - Interface for whitelisting addresses (After MySQL is done)
 - Add security support for apache (.htaccess) (A pull request with the .htaccess file would be nice!)
