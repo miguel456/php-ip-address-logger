@@ -1,5 +1,4 @@
 <?php
-require 'config.php';
 
 function logAddress() {
     subjectIsWhitelisted(); // Check whether user is whitelisted; if so, stop script and prevent IP from being logged
