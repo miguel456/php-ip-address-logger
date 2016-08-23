@@ -1,5 +1,5 @@
 <?php
-
+// TODO: require 'config.php'; (Revert part of last commit)
 function logAddress() {
     subjectIsWhitelisted(); // Check whether user is whitelisted; if so, stop script and prevent IP from being logged
     date_default_timezone_set('UTC');
