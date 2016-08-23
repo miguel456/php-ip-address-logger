@@ -13,13 +13,13 @@ function subjectIsWhitelisted() { // For exclusive use in this file only; should
     $whitelisted = "You are whitelisted. Not logging address.";
     $getWhitelist = fopen('whitelist.txt', 'r');
     $readData = fread($getWhitelist, 40);
+    fclose($getWhitelist);
     //Write your IP address in the place of 0.0.0.0
     if($readData == "0.0.0.0") { // TODO: Replace with someting like define(); to allow for flexibility, or a variable linking to a config with an array
-        fclose($getWhitelist);
         exit($whitelisted); // Prevent IP from being logged
     }
     else {
-        // Move on, log that scumbag's address! But first, let him know.
+        // Move on, log that guy's address! But first, let him know.
         $intruder = "You shouldnt be here!";
         echo $intruder;
         echo "<br>";
