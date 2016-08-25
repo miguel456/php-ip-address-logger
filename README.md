@@ -22,9 +22,9 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 --
 
 # Upcoming Features
-- Logging to MySQL - Underway - See below
+- ~~Logging to MySQL - Underway - See below~~ DEVELOPMENT PAUSED 
 - Config file (Better Whitelisting System, fallback in case db fails) - 25% Done
-- Grabbing config values from MySQL (Will replace above) - 50% Done (First dev release is waiting commit)
+- ~~Grabbing config values from MySQL (Will replace above) - 50% Done (First dev release is waiting commit~~ DEVELOPMENT PAUSED
 - Interface for whitelisting addresses (After MySQL is done)
 - Add security support for apache (.htaccess) (A pull request with the .htaccess file would be nice!)
 - Make script silently handle errors without letting end-user know
