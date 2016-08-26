@@ -22,14 +22,14 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 --
 
 # Upcoming Features
-- ~~Logging to MySQL - Underway - See below~~ DEVELOPMENT PAUSED 
-- Config file (Better Whitelisting System, fallback in case db fails) - 40% Done
-- ~~Grabbing config values from MySQL (Will replace above) - 50% Done (First dev release is waiting commit~~ DEVELOPMENT PAUSED
-- ~~Interface for whitelisting addresses (After MySQL is done)~~
-- Add security support for apache (.htaccess) (A pull request with the .htaccess file would be nice!)
-- Make script silently handle errors without letting end-user know
+- Logging to MySQL - 100% Done, waiting bugfixes & commit
+- Config file (Better Whitelisting System, fallback in case db fails) - 100% Done, waiting commit
+- ~~Grabbing config values from MySQL (Will replace above) ~~ DEVELOPMENT CANCELLED
+- ~~Interface for whitelisting addresses (After MySQL is done)~~  ON HOLD
+- Add security support for apache (.htaccess) 
+- Make script silently handle errors without letting end-user know - 100% Done, waiting commit (the fallback is the error handling)
 - Grab HTTP Headers and referrers, and filter them
-- ~~Send a cookie with their information and make them send it back (Like statistics data)~~
+- ~~Send a cookie with their information and make them send it back (Like statistics data)~~ DEVELOPMENT CANCELLED
 
 # Bugs, errors or feature suggestions/improvements
 Report all bugs you find (Although I think there are none at the moment), leave suggestions or improvement requests in a ticket. You can also start a pull request for a new feature/improvement and I'll look into it.
