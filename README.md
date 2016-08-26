@@ -24,7 +24,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 # Upcoming Features
 - Logging to MySQL - 100% Done, waiting bugfixes & commit
 - Config file (Better Whitelisting System, fallback in case db fails) - 100% Done, waiting commit
-- ~~Grabbing config values from MySQL (Will replace above) ~~ DEVELOPMENT CANCELLED
+- ~~Grabbing config values from MySQL (Will replace above)~~ DEVELOPMENT CANCELLED
 - ~~Interface for whitelisting addresses (After MySQL is done)~~  ON HOLD
 - Add security support for apache (.htaccess) 
 - Make script silently handle errors without letting end-user know - 100% Done, waiting commit (the fallback is the error handling)
