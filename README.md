@@ -18,7 +18,7 @@ BEFORE CONTINUING, MAKE SURE THAT YOU USE IIS AND CREATE A HIDDEN SEGMENT FOR ("
 
 
 # php-ip-address-logger
-Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. I'm planning writing data to MySQL, so you could display the data somewhere.
+Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. This is a low interaction honeypot and you may set up multiple directores with several installations. Communication between them is a planned feature (See [Releases](https://git.io/v6hjp "Releases") for a list of planned features + pre-releases) as well as URL reporting when multiple are installed.
 
 This simple script will log someone's IP address upon visiting a page, to a file. Can be repurposed to log something else by changing a few variables.
 
