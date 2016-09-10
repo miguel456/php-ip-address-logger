@@ -53,7 +53,7 @@ More features are coming! Check out the latest release's release notes for them 
 Simply use your favorite SQL client and open the "addresses" table, and select the data. All the addresses that have hit the URL you rigged will be there, along with a detailed timestamp. 
 
 # Whitelisting users
-To keep someone from having their address sent to the DB, simply insert their numerical into the "whitelist" table. Then the app will exit if it finds someone with an address inside "whitelist".
+To keep someone from having their address sent to the DB, simply insert their numerical IP into the "whitelist" table. Then the app will exit if it finds someone with an address inside "whitelist".
 
 # Bugs, errors or feature suggestions/improvements
 Report all bugs you find (Although I think there are none at the moment), leave suggestions or improvement requests in a ticket. You can also start a pull request for a new feature/improvement and I'll look into it.
