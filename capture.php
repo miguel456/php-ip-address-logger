@@ -19,7 +19,13 @@ require_once 'config.php'; // DON'T CHANGE THIS REQUIRE_ONCE TO REQUIRE, IT WILL
 //FIXME: This doesn't work; try to fix first
 
 if($debugMode == true) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    // Please don't turn display_errors to on your php.ini! It's not needed!
     echo "WARNING! DEBUG MODE IS ACTIVE. PLEASE TURN IT OFF IT YOU ARE FINISHED WITH DEBUGGING.";
+    echo "<br>";
+    echo "Note: PHP will create a low-level warning when the script is executed for someone who's not whitelisted. Please dismiss it."
 }
 
 $useDatabase = "USE iplogger;";
