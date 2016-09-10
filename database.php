@@ -12,5 +12,16 @@
 * You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 * Full license: LICENSE.md within this repo.
 * Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
+* 
 */
+require 'config.php';
+
+$connection = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
+
+if(!$connection) { // Fall back to text logging and text whitelist retrieval if connection fails or throws an error
+    fallback(); // function defined on capture.php
+}
+else {
+    // do nothing
+}
 ?>
