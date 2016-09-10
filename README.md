@@ -13,19 +13,19 @@ Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
 
 
 
-# REQUIRED
-BEFORE CONTINUING, MAKE SURE THAT YOU USE IIS AND CREATE A HIDDEN SEGMENT FOR ("addresses.txt") and ("whitelist.txt")!! I DON'T SUPPORT APACHE, AND IF YOU WANT TO USE THIS THERE, MAKE SURE TO CREATE A .HTACCESS FILE DENYING ACCESS TO THEM!! I AM NOT RESPONSIBLE FOR ANY SECURITY BREACH. BE ADVISED.
+# ~~REQUIRED~~
+~~BEFORE CONTINUING, MAKE SURE THAT YOU USE IIS AND CREATE A HIDDEN SEGMENT FOR ("addresses.txt") and ("whitelist.txt")!! I DON'T SUPPORT APACHE, AND IF YOU WANT TO USE THIS THERE, MAKE SURE TO CREATE A .HTACCESS FILE DENYING ACCESS TO THEM!! I AM NOT RESPONSIBLE FOR ANY SECURITY BREACH. BE ADVISED.~~
 
 
 # php-ip-address-logger
 Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. This is a low interaction honeypot and you may set up multiple directores with several installations. Communication between them is a planned feature (See [Releases](https://git.io/v6hjp "Releases") for a list of planned features + pre-releases) as well as URL reporting when multiple are installed.
 
-This simple script will log someone's IP address upon visiting a page, to a file. Can be repurposed to log something else by changing a few variables.
+This simple script will log someone's IP address upon visiting a page, to your database. ~~Can be repurposed to log something else by changing a few variables.~~
 
 # Installation
 
-Simply drag and drop the scripts to the directory you want to log. Rename from index.php to something else if you already have one, and then make something of yours point there.
-The code will be commented so you can understand.
+Simply drag and drop the scripts to the directory you want to log. ~~Rename from index.php to something else if you already have one, and then make something of yours point there.~~ 
+Then, import the SQL file to your database and fill in its login details in the config file.
 
 # Uses 
 I originally created this as I was getting too many 404's to non-existent locations, such as phpMyAdmin or PMA. So, as there was no similar software to do this,
@@ -37,17 +37,27 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 --
 
 # Upcoming Features
-- Logging to MySQL - 100% Done, waiting bugfixes & commit
-- Config file (Better Whitelisting System, fallback in case db fails) - 100% Done, waiting commit
+- ~~Logging to MySQL ~~ Done
+- ~~Config file (Better Whitelisting System, fallback in case db fails)~~ Done
 - ~~Grabbing config values from MySQL (Will replace above)~~ DEVELOPMENT CANCELLED
 - ~~Interface for whitelisting addresses (After MySQL is done)~~  ON HOLD
-- Add security support for apache (.htaccess) 
-- Make script silently handle errors without letting end-user know - 100% Done, waiting commit (the fallback is the error handling)
+- ~~Add security support for apache (.htaccess)~~ Done, with MySQL support there is no need for a .htaccess 
+- ~~Make script silently handle errors without letting end-user know (the fallback is the error handling)~~ Done
 - Grab HTTP Headers and referrers, and filter them
 - ~~Send a cookie with their information and make them send it back (Like statistics data)~~ DEVELOPMENT CANCELLED
+
+--
+More features are coming! Check out the latest release's release notes for them (That release has essentially the same source code as the main repo, which you are viewing).  
+
+# Retrieving the badguys' addresses
+Simply use your favorite SQL client and open the "addresses" table, and select the data. All the addresses that have hit the URL you rigged will be there, along with a detailed timestamp. 
+
+# Whitelisting users
+To keep someone from having their address sent to the DB, simply insert their numerical into the "whitelist" table. Then the app will exit if it finds someone with an address inside "whitelist".
 
 # Bugs, errors or feature suggestions/improvements
 Report all bugs you find (Although I think there are none at the moment), leave suggestions or improvement requests in a ticket. You can also start a pull request for a new feature/improvement and I'll look into it.
 
 # Security
-Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache.
+~~Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache~~
+At the moment, there are no security concerns. There are, however, if you fail to fill in the db details.
