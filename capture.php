@@ -21,7 +21,7 @@ require_once 'config.php'; // DON'T CHANGE THIS REQUIRE_ONCE TO REQUIRE, IT WILL
 if($debugMode == true) {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    error_reporting(E_WARNING | E_ERROR);
     // Please don't turn display_errors to on your php.ini! It's not needed!
     echo "WARNING! DEBUG MODE IS ACTIVE. PLEASE TURN IT OFF IT YOU ARE FINISHED WITH DEBUGGING.";
     echo "<br>";
