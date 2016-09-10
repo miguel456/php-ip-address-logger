@@ -37,7 +37,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 --
 
 # Upcoming Features
-- ~~Logging to MySQL ~~ Done
+- ~~Logging to MySQL~~ Done
 - ~~Config file (Better Whitelisting System, fallback in case db fails)~~ Done
 - ~~Grabbing config values from MySQL (Will replace above)~~ DEVELOPMENT CANCELLED
 - ~~Interface for whitelisting addresses (After MySQL is done)~~  ON HOLD
