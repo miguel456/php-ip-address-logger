@@ -1,4 +1,5 @@
 <?php
+
 /**
 * PHP Address Logger - The PHP IP logger and Honeypot - Copyright (C) 2016 miguel456
 *
@@ -11,35 +12,58 @@
 * Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
 */
 
+require  'database.php';
+require_once 'config.php'; // DON'T CHANGE THIS REQUIRE_ONCE TO REQUIRE, IT WILL BREAK THE ENTIRE APP
 
-// TODO: require 'config.php'; (Revert part of last commit)
-function logAddress() {
-    subjectIsWhitelisted(); // Check whether user is whitelisted; if so, stop script and prevent IP from being logged
-    date_default_timezone_set('UTC');
-    $getDate = date('l jS \of F Y h:i:s A');
-    $logAddress = fopen('addresses.txt', 'a+'); // Open file
-    fwrite($logAddress, $getDate . " - " . $_SERVER['REMOTE_ADDR']); // Write user's IP address to a file followed by the time and date
-    fclose($logAddress); // Close the file
+// Define all necessary variables for use, including some statements, but not all
+//FIXME: This doesn't work; try to fix first
+
+if($debugMode == true) {
+    echo "WARNING! DEBUG MODE IS ACTIVE. PLEASE TURN IT OFF IT YOU ARE FINISHED WITH DEBUGGING.";
 }
 
-function subjectIsWhitelisted() { // For exclusive use in this file only; shouldn't be called elsewhere
-    $whitelisted = "You are whitelisted. Not logging address.";
-    $getWhitelist = fopen('whitelist.txt', 'r');
-    $readData = fread($getWhitelist, 40);
-    fclose($getWhitelist);
-    //Write your IP address in the place of 0.0.0.0
-    if($readData == "0.0.0.0") { // TODO: Replace with someting like define(); to allow for flexibility, or a variable linking to a config with an array
-        exit($whitelisted); // Prevent IP from being logged
-    }
-    else {
-        // Move on, log that guy's address! But first, let him know.
-        $intruder = "You shouldnt be here!";
-        echo $intruder;
-        echo "<br>";
-    }
+$useDatabase = "USE iplogger;";
+$grabStuff = "SELECT * FROM whitelist LIMIT 10";
+$subjectIP = $_SERVER['REMOTE_ADDR'];
+$youAreWhitelisted = "You are whitelisted. Exiting, not logging address.";
+mysqli_query($connection, $useDatabase); // May be obsolete but better safe than sorry (Tells the server to use that DB, database.php already does that)
+mysqli_query($connection, $grabStuff); // "SELECT * FROM whitelist LIMIT 10;";
+$result = mysqli_query($connection, $grabStuff);
+$string = mysqli_fetch_array($result);
+$stringToSearch = $subjectIP;
+
+if(in_array($stringToSearch, $string)) {
+    exit($youAreWhitelisted);
+} 
+else {
+    // nothin'
 }
 
-function deleteBigFile() { // Fool proofing; If people spam the page or file gets above 10m, it gets deleted. Function's called on index.php.
+
+/**
+ * The below code will take the subject's IP address and insert it into the database, assuming the code above hasn't aborted the script.
+ * The sleep function is here to prevent spammers and spare the database
+ */
+$createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
+$address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
+mysqli_query($connection, $useDatabase);
+$insertIP = "INSERT INTO `addresses` (`addresses`, `time`) VALUES ('$address', now());";
+// $selectDatabase = "SELECT * FROM iplogger;"; (obsolete)
+mysqli_query($connection, $createDatabase);
+// mysqli_query($connection, $selectDatabase); (obsolete)
+
+mysqli_query($connection, $insertIP);
+
+
+mysqli_close($connection); // Closes the connection
+
+
+/**
+ * This function will delete the text log file in case it exceeds 10 megabytes. This is here as there is a concern for trolls that
+ * may spam a page therefore making the log as big as they want.
+ * The function is rarely called, except when a database connection has failed and fallback() is called as well.
+ */
+function deleteBigFile() {
     $getLogFile = 'addresses.txt';
     if(file_exists($getLogFile) && filesize($getLogFile) > 10000000) {
         unlink($getLogFile);
@@ -48,3 +72,48 @@ function deleteBigFile() { // Fool proofing; If people spam the page or file get
         // do nothing
     }
 }
+
+/**
+ * This function is called when no database connection is available. The function calls the legacy function subjectIsWhitelisted().
+ * This function does exactly the same as the MySQL code above, in exception that it writes to a file as a direct result of
+ * connecting to the database not being available.
+ */
+function fallback() { // Formerly logAddress()
+    subjectIsWhitelistedLegacy();
+    deleteBigFile();
+    date_default_timezone_set('UTC');
+    $getDate = date('l jS \of F Y h:i:s A');
+    $logAddress = fopen('addresses.txt', 'a+'); // Open file
+    fwrite($logAddress, $getDate . " - " . $_SERVER['REMOTE_ADDR']);
+    fclose($logAddress);
+}
+
+
+function subjectIsWhitelistedLegacy() { // For exclusive use in this file only; shouldn't be called elsewhere
+    $whitelisted = "You are whitelisted. Not logging address.";
+    $getWhitelist = fopen('whitelist.txt', 'r');
+    $readData = fread($getWhitelist, 40);
+    fclose($getWhitelist);
+    //Write your IP address in the place of 0.0.0.0
+    switch ($readData) {
+        case "0.0.0.0": //
+            exit($whitelisted); // Prevent IP from being logged
+            break;
+        default:
+            // Move on, log that guy's address! But first, let him know.
+            $intruder = "You shouldnt be here!";
+            echo $intruder;
+            echo "<br>";
+            break;
+    }
+}
+/**
+ * Changes this commit:
+ * - Cleared code of over-commenting
+ * - Removed the exccessive dependency for functions
+ * - Removed the main logAddress function and turned it into a legacy function (Which is only called in case of errors)
+ * - Added DocBlocs
+ * - Added config for legacy logAddress (Which now is fallback(), called on database.php (incase of error only)
+ */
+ 
+?>
