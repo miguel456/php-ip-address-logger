@@ -71,6 +71,10 @@ function deleteBigFile() {
     else {
         // do nothing
     }
+    if($debugMode == true) {
+        echo "<br>";
+        echo "Function deleteBigFile() was called. Assuming the app has fallen back to default logging methods.";
+    }
 }
 
 /**
