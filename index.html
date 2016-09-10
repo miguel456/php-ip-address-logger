@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>PHP IP Address Logger by miguel456</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/miguel456/php-ip-address-logger">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>PHP IP Address Logger</h1>
+            <h2>PHP IP address Honeypot - See which attacker is interested in which vulnerability, right from your database dashboard.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/miguel456/php-ip-address-logger/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/miguel456/php-ip-address-logger/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <p>PHP Address Logger - The PHP IP logger and Honeypot - Copyright (C) 2016 miguel456
+This software is licensed under the GNU GPLv3 License. <a href="https://github.com/miguel456/php-ip-address-logger/blob/master/LICENSE.md" title="Click here for the full license.">Full License</a></p>
+
+<h1>
+<a id="php-ip-address-logger" class="anchor" href="#php-ip-address-logger" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>php-ip-address-logger</h1>
+
+<p>Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. This is a low interaction honeypot and you may set up multiple directores with several installations. Communication between them is a planned feature (See <a href="https://git.io/v6hjp" title="Releases">Releases</a> for a list of planned features + pre-releases) as well as URL reporting when multiple are installed.</p>
+
+<p>This simple script will log someone's IP address upon visiting a page, to your database. <del>Can be repurposed to log something else by changing a few variables.</del></p>
+
+<h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>Simply drag and drop the scripts to the directory you want to log. <del>Rename from index.php to something else if you already have one, and then make something of yours point there.</del> 
+Then, import the SQL file to your database and fill in its login details in the config file.</p>
+
+<h1>
+<a id="uses" class="anchor" href="#uses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Uses</h1>
+
+<p>I originally created this as I was getting too many 404's to non-existent locations, such as phpMyAdmin or PMA. So, as there was no similar software to do this,
+I decided to go ahead and write this, and set up an honeypot. This way, I know their address without going through thousands of entries in the log.</p>
+
+<h2></h2>
+
+<p>If you want to, you can use this code as a base to log something; it's up to you.</p>
+
+<h2>
+<a id="note-that-i-am-an-absolute-beginner-and-this-is-my-first-ever-repo-i-dont-even-know-if-there-are-useful-use-cases-other-than-an-honeypot-and-this-may-even-be-obsolete-i-didnt-find-anything-similar-to-use" class="anchor" href="#note-that-i-am-an-absolute-beginner-and-this-is-my-first-ever-repo-i-dont-even-know-if-there-are-useful-use-cases-other-than-an-honeypot-and-this-may-even-be-obsolete-i-didnt-find-anything-similar-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note that I am an absolute beginner and this is my first ever repo. I don't even know if there are useful use cases other than an honeypot, and this may even be obsolete. I didn't find anything similar to use!</h2>
+
+<h1>
+<a id="upcoming-features" class="anchor" href="#upcoming-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upcoming Features</h1>
+
+<ul>
+<li>
+<del>Logging to MySQL</del> Done</li>
+<li>
+<del>Config file (Better Whitelisting System, fallback in case db fails)</del> Done</li>
+<li>
+<del>Grabbing config values from MySQL (Will replace above)</del> DEVELOPMENT CANCELLED</li>
+<li>
+<del>Interface for whitelisting addresses (After MySQL is done)</del>  ON HOLD</li>
+<li>
+<del>Add security support for apache (.htaccess)</del> Done, with MySQL support there is no need for a .htaccess </li>
+<li>
+<del>Make script silently handle errors without letting end-user know (the fallback is the error handling)</del> Done</li>
+<li>Grab HTTP Headers and referrers, and filter them</li>
+<li>
+<del>Send a cookie with their information and make them send it back (Like statistics data)</del> DEVELOPMENT CANCELLED</li>
+</ul>
+
+<h2></h2>
+
+<p>More features are coming! Check out the latest release's release notes for them (That release has essentially the same source code as the main repo, which you are viewing).  </p>
+
+<h1>
+<a id="retrieving-the-badguys-addresses" class="anchor" href="#retrieving-the-badguys-addresses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieving the badguys' addresses</h1>
+
+<p>Simply use your favorite SQL client and open the "addresses" table, and select the data. All the addresses that have hit the URL you rigged will be there, along with a detailed timestamp. </p>
+
+<h1>
+<a id="whitelisting-users" class="anchor" href="#whitelisting-users" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Whitelisting users</h1>
+
+<p>To keep someone from having their address sent to the DB, simply insert their numerical IP into the "whitelist" table. Then the app will exit if it finds someone with an address inside "whitelist".</p>
+
+<h1>
+<a id="bugs-errors-or-feature-suggestionsimprovements" class="anchor" href="#bugs-errors-or-feature-suggestionsimprovements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bugs, errors or feature suggestions/improvements</h1>
+
+<p>Report all bugs you find (Although I think there are none at the moment), leave suggestions or improvement requests in a ticket. You can also start a pull request for a new feature/improvement and I'll look into it.</p>
+
+<h1>
+<a id="security" class="anchor" href="#security" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Security</h1>
+
+<p><del>Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache</del>
+At the moment, there are no security concerns. There are, however, if you fail to fill in the db details.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/miguel456">miguel456</a> can be found on <a href="https://github.com/miguel456/php-ip-address-logger">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
