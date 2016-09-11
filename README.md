@@ -50,7 +50,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 --
 More features are coming! Check out the latest release's release notes for them (That release has essentially the same source code as the main repo, which you are viewing).  
 --
-# 3^rd Party Sources
+# 3rd Party Sources
 The recently added "Idiot Mode", a reference to the now-taken-down virus site http://youareanidiot.org, is using a recreated version of it in JavaScript, develped by rodneyrehm. His repository can be found [here.](https://github.com/rodneyrehm/you-are-an-idiot/)
 I only included his source-code for the Idiot Mode. The code that makes the "You are An Idiot" page appear is mine, but the code that creates it isn't. As there is a lack of a valid license in the repo, I can only limit myself to disclaiming copyright in his JavaScript code and to give credit.
 
