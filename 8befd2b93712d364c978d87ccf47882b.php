@@ -1,8 +1,8 @@
 <?php
 /**
- 	    Original Flash Movie: http://youareanidiot.org/
-	    Audio from http://shane-o.com/sound-drops/163-idiot-drop
-	    This implementation: Rodney Rehm - http://rodneyrehm.de/en/
+* 	    Original Flash Movie: http://youareanidiot.org/
+*	    Audio from http://shane-o.com/sound-drops/163-idiot-drop
+*	    This implementation: Rodney Rehm - http://rodneyrehm.de/en/
 */	    
 // This file will be included in index.php incase the user has set "idiotmode" to true
 require 'errorcodesAndTitles.php';
