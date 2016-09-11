@@ -15,6 +15,7 @@
 
 // Don't turn on unless you think there is something wrong
 $debugMode = false;
+define("idiotmode", "true"); // Unused
 
 // *******************DATABASE CONNECTION INFORMATION - REQUIRES CHANGES**************
 
