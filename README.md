@@ -50,9 +50,13 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 --
 More features are coming! Check out the latest release's release notes for them (That release has essentially the same source code as the main repo, which you are viewing).  
 --
-# Known issues
-- The sound when idiot mode is turned on is absent.
-- The smile symbols are not recognised by the browser and replaced by a question mark.
+# 3^rd Party Sources
+The recently added "Idiot Mode", a reference to the now-taken-down virus site http://youareanidiot.org, is using a recreated version of it in JavaScript, develped by rodneyrehm. His repository can be found [here.](https://github.com/rodneyrehm/you-are-an-idiot/)
+I only included his source-code for the Idiot Mode. The code that makes the "You are An Idiot" page appear is mine, but the code that creates it isn't. As there is a lack of a valid license in the repo, I can only limit myself to disclaiming copyright in his JavaScript code and to give credit.
+
+# Known Caveats
+- When turning on the Idiot mode, no music would play and the smiley faces were just question marks. I don't recommend using it until the JavaScript developer fixes it. 
+- The debug mode will say that Idiot mode is active, when in fact it isn't. This isn't a major issue and everything should work as expected.
 
 
 # Retrieving the badguys' addresses
