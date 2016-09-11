@@ -45,9 +45,15 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - ~~Make script silently handle errors without letting end-user know (the fallback is the error handling)~~ Done
 - Grab HTTP Headers and referrers, and filter them
 - ~~Send a cookie with their information and make them send it back (Like statistics data)~~ DEVELOPMENT CANCELLED
+- ~~Idiot Mode~~ Done
 
 --
 More features are coming! Check out the latest release's release notes for them (That release has essentially the same source code as the main repo, which you are viewing).  
+--
+# Known issues
+- The sound when idiot mode is turned on is absent.
+- The smile symbols are not recognised by the browser and replaced by a question mark.
+
 
 # Retrieving the badguys' addresses
 Simply use your favorite SQL client and open the "addresses" table, and select the data. All the addresses that have hit the URL you rigged will be there, along with a detailed timestamp. 
