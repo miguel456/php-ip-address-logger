@@ -11,7 +11,7 @@ require_once 'config.php';
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<?php echo "<title>" . sitename . " - " . $siteTitles['troll'] . "</title>"; -->
+	<?php echo "<title>" . sitename . " - " . $siteTitles['troll'] . "</title>"; ?>
 	
 	<style>
 	    body {
