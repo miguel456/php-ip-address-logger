@@ -14,7 +14,8 @@ require_once 'config.php'; // Grab config values for statements below
   if($idiotMode == true) {
     include('8befd2b93712d364c978d87ccf47882b.php');
   }
-  if($debugMode == true) {
+  
+  if($debugMode == true && $idiotMode == true) { 
     echo "<br>";
     echo "Activating idiot mode!";
   }
