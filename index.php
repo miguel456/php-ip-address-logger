@@ -10,24 +10,6 @@ require_once 'config.php'; // Grab config values for statements below
 <!DOCTYPE HTML>
 <html>
 <head>
-  <?php
-  if($idiotMode == true) {
-    include('8befd2b93712d364c978d87ccf47882b.php');
-  }
-  
-  if($debugMode == true && $idiotMode == true) { 
-    echo "<br>";
-    echo "Activating idiot mode!";
-  }
-  else {
-    if($debugMode == true) {
-      echo "<br>";
-      echo "The idiot mode was not activated due to user-defined setting.";
-    }
-  }
-  
-  ?>
-  
 <!-- The title will be defined by the app, don't put a title tag or you risk bugging it! -->
 </head>
 <body>
