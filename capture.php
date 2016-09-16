@@ -51,8 +51,7 @@ else {
  * Also, include dirbname incase the user is using multiple traps
  */
  // database add
-$refererNonSanitized = $_SERVER['HTTP_REFERER']; // UNTRUSTED DATA
-$refererAlreadySanitized = htmlspecialchars($refererNonSanitized); //Trusted data
+ 
 $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
 $address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
 mysqli_query($connection, $useDatabase);
@@ -61,10 +60,23 @@ $insertIP = "INSERT INTO `addresses` (`addresses`, `time`) VALUES ('$address', n
 mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
 $insertLocSQL = "INSERT INTO location VALUES ($insertLoc);";
-$refererAlreadySanitizedSQL = "INSERT INTO httpreferer VALUES ($refererAlreadySanitized);";
-mysqli_query($connection, $refererAlreadySanitizedSQL);
 mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
 mysqli_query($connection, $insertIP); //tested. working.
+
+if(isset($_SERVER['HTTP_REFERER'])) {
+    if($debugMode == true) {
+        echo "Client did send an http referer. Inserting into DB."
+    }
+    $refererNonSanitized = $_SERVER['HTTP_REFERER'];
+    $refererAlreadySanitized = htmlspecialchars($refererNonSanitized);
+    $refererAlreadySanitizedSQL = "INSERT INTO httpreferer VALUES ($refererAlreadySanitized);";
+    mysqli_query($connection, $refererAlreadySanitizedSQL);
+}
+else {
+    if($debugMode == true) {
+        echo "Client did not send a referer. Either he is using xww.ro (or some other service) or he typed in the address directly. Not performing insertive query."
+    }
+}
 
 
 mysqli_close($connection); // Closes the connection
