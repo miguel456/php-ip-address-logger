@@ -79,6 +79,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
 }
 else {
     if($debugMode == true) {
+        echo "<br>";
         echo "Client did not send a referer. Either he is using xww.ro (or some other service) or he typed in the address directly. Not performing insertive query.";
     }
 }
