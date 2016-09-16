@@ -65,7 +65,7 @@ mysqli_query($connection, $insertIP); //tested. working.
 
 if(isset($_SERVER['HTTP_REFERER'])) {
     if($debugMode == true) {
-        echo "Client did send an http referer. Inserting into DB."
+        echo "Client did send an http referer. Inserting into DB.";
     }
     $refererNonSanitized = $_SERVER['HTTP_REFERER'];
     $refererAlreadySanitized = htmlspecialchars($refererNonSanitized);
@@ -74,7 +74,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
 }
 else {
     if($debugMode == true) {
-        echo "Client did not send a referer. Either he is using xww.ro (or some other service) or he typed in the address directly. Not performing insertive query."
+        echo "Client did not send a referer. Either he is using xww.ro (or some other service) or he typed in the address directly. Not performing insertive query.";
     }
 }
 
