@@ -63,6 +63,10 @@ $insertLocSQL = "INSERT INTO location VALUES ($insertLoc);";
 mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
 mysqli_query($connection, $subjectIP); //tested. working.
 
+if($debugMode == true) {
+    echo mysqli_sqlstate($connection);
+}
+
 if(isset($_SERVER['HTTP_REFERER'])) {
     if($debugMode == true) {
         echo "Client did send an http referer. Inserting into DB.";
