@@ -61,7 +61,7 @@ mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
 $insertLocSQL = "INSERT INTO location VALUES ($insertLoc);";
 mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
-mysqli_query($connection, $insertIP); //tested. working.
+mysqli_query($connection, $subjectIP); //tested. working.
 
 if(isset($_SERVER['HTTP_REFERER'])) {
     if($debugMode == true) {
