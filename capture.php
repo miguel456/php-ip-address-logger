@@ -64,7 +64,8 @@ mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or 
 mysqli_query($connection, $subjectIP); //tested. working.
 
 if($debugMode == true) {
-    echo mysqli_sqlstate($connection);
+    echo "<br>";
+    echo "Current SQLSTATE is: " . mysqli_sqlstate($connection);
 }
 
 if(isset($_SERVER['HTTP_REFERER'])) {
