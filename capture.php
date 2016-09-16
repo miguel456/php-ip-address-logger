@@ -51,7 +51,7 @@ else {
  * Also, include dirbname incase the user is using multiple traps
  */
  // database add
-$refererNonSanitized = $_SERVER[HTTP_REFERER]; // UNTRUSTED DATA
+$refererNonSanitized = $_SERVER['HTTP_REFERER']; // UNTRUSTED DATA
 $refererAlreadySanitized = htmlspecialchars($refererNonSanitized); //Trusted data
 $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
 $address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
