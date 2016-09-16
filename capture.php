@@ -60,7 +60,7 @@ $insertIP = "INSERT INTO `addresses` (`addresses`, `time`) VALUES ('$address', n
 mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
 $insertLocSQL = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('', '', '$insertLoc', 'now()');";
+VALUES ('', '', '$insertLoc', now());";
 mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
 mysqli_query($connection, $subjectIP); //tested. working.
 
