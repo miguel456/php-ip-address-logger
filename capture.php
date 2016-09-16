@@ -62,7 +62,7 @@ mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
 $insertLocSQL = "INSERT INTO location VALUES ($insertLoc);";
 $refererAlreadySanitizedSQL = "INSERT INTO httpreferer VALUES ($refererAlreadySanitized);";
-mysqli_query($connection, $refererAlreadySanitizedSQL)
+mysqli_query($connection, $refererAlreadySanitizedSQL);
 mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
 mysqli_query($connection, $insertIP); //tested. working.
 
