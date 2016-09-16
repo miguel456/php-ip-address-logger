@@ -46,6 +46,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - Grab HTTP Headers and referrers, and filter them
 - ~~Send a cookie with their information and make them send it back (Like statistics data)~~ DEVELOPMENT CANCELLED
 - ~~Idiot Mode~~ Done
+- Add web interface for easily whitelisting and "victim" retrieval, therefore not requiring technical knowledge.
 
 --
 More features are coming! Check out the latest release's release notes for them (That release has essentially the same source code as the main repo, which you are viewing).  
