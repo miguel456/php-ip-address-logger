@@ -27,7 +27,7 @@ if($debugMode == true) {
     echo "<br>";
     echo "Note: PHP will create a low-level warning when the script is executed for someone who's not whitelisted. Please dismiss it.";
 }
-
+// whitelist check
 $useDatabase = "USE iplogger;";
 $grabStuff = "SELECT * FROM whitelist LIMIT 10";
 $subjectIP = $_SERVER['REMOTE_ADDR'];
@@ -48,17 +48,23 @@ else {
 
 /**
  * The below code will take the subject's IP address and insert it into the database, assuming the code above hasn't aborted the script.
- * The sleep function is here to prevent spammers and spare the database
+ * Also, include dirbname incase the user is using multiple traps
  */
+ // database add
+$refererNonSanitized = $_SERVER[HTTP_REFERER]; // UNTRUSTED DATA
+$refererAlreadySanitized = htmlspecialchars($refererNonSanitized); //Trusted data
 $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
 $address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
 mysqli_query($connection, $useDatabase);
 $insertIP = "INSERT INTO `addresses` (`addresses`, `time`) VALUES ('$address', now());";
 // $selectDatabase = "SELECT * FROM iplogger;"; (obsolete)
 mysqli_query($connection, $createDatabase);
-// mysqli_query($connection, $selectDatabase); (obsolete)
-
-mysqli_query($connection, $insertIP);
+$insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
+$insertLocSQL = "INSERT INTO location VALUES ($insertLoc);";
+$refererAlreadySanitizedSQL = "INSERT INTO httpreferer VALUES ($refererAlreadySanitized);";
+mysqli_query($connection, $refererAlreadySanitizedSQL)
+mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
+mysqli_query($connection, $insertIP); //tested. working.
 
 
 mysqli_close($connection); // Closes the connection
