@@ -55,8 +55,9 @@ if(isset($_SERVER['HTTP_REFERER'])) { // get referer if it exists
     if($debugMode == true) {
         echo "Client did send an http referer. Inserting into DB.";
     }
-    $refererNonSanitized = $_SERVER['HTTP_REFERER'];
-    $refererAlreadySanitized = htmlspecialchars($refererNonSanitized);
+    $refererNonSanitized = $_SERVER['HTTP_REFERER']; // put referer in a var for later use
+    $refererAlreadySanitized = htmlspecialchars($refererNonSanitized); // Strip referer of any html tags
+    $refererAlreadySanitizedRealStr = mysqli_real_escape_string($refererAlreadySanitized); // escape any left-over special mysql elements
 }
 else {
     if($debugMode == true) {
@@ -71,8 +72,9 @@ mysqli_query($connection, $useDatabase);
 mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__;
 $sanitizedInsertLoc = mysqli_real_escape_string($connection, $insertLoc); // This isn't Injection prevention; just to escape special chars from dirnames, so its fine to use this altought it would be still dangerous for user input.
+$sanitizedInsertLocSpecChars = $sanitizedInsertLoc;
 $unifiedQuery = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('$address', '$refererAlreadySanitized', '$sanitizedInsertLoc', now());";
+VALUES ('$address', '$refererAlreadySanitized', '$sanitizedInsertLocSpecChars', now());";
 mysqli_query($connection, $unifiedQuery);
 
 if($debugMode == true) {
@@ -136,13 +138,4 @@ function subjectIsWhitelistedLegacy() { // For exclusive use in this file only; 
             break;
     }
 }
-/**
- * Changes this commit:
- * - Cleared code of over-commenting
- * - Removed the exccessive dependency for functions
- * - Removed the main logAddress function and turned it into a legacy function (Which is only called in case of errors)
- * - Added DocBlocs
- * - Added config for legacy logAddress (Which now is fallback(), called on database.php (incase of error only)
- */
- 
 ?>
