@@ -70,7 +70,7 @@ $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
 $address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
 mysqli_query($connection, $useDatabase);
 mysqli_query($connection, $createDatabase);
-$insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
+$insertLoc = __DIR__;
 $sanitizedInsertLoc = mysqli_real_escape_string($connection, $insertLoc); // This isn't Injection prevention; just to escape special chars from dirnames, so its fine to use this altought it would be still dangerous for user input.
 $unifiedQuery = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
 VALUES ('$address', '$refererAlreadySanitized', '$sanitizedInsertLoc', now());";
