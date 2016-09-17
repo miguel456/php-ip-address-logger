@@ -13,8 +13,8 @@ Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
 
 
 
-# ~~REQUIRED~~
-~~BEFORE CONTINUING, MAKE SURE THAT YOU USE IIS AND CREATE A HIDDEN SEGMENT FOR ("addresses.txt") and ("whitelist.txt")!! I DON'T SUPPORT APACHE, AND IF YOU WANT TO USE THIS THERE, MAKE SURE TO CREATE A .HTACCESS FILE DENYING ACCESS TO THEM!! I AM NOT RESPONSIBLE FOR ANY SECURITY BREACH. BE ADVISED.~~
+# PHP Compatibility
+This program was developed and tested against PHP version 5.4.45. Any other versions are untested and the program may not work at all. If you whish to use this, please use only PHP version ´5.4.45´.
 
 
 # php-ip-address-logger
