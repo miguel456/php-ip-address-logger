@@ -51,35 +51,13 @@ else {
  * Also, include dirbname incase the user is using multiple traps
  */
  // database add
- 
-$createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
-$address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
-mysqli_query($connection, $useDatabase);
-$insertIP = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('$address', '', '', now());";
-// $selectDatabase = "SELECT * FROM iplogger;"; (obsolete)
-mysqli_query($connection, $createDatabase);
-$insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
-$sanitizedInsertLoc = mysqli_real_escape_string($connection, $insertLoc); // This isn't Injection prevention; just to escape special chars from dirnames, so its fine to use this altought it would be still dangerous for user input.
-$insertLocSQL = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('', '', '$sanitizedInsertLoc', now());";
-mysqli_query($connection, $insertLocSQL); //untested, please report any bugs or malfunctioning
-mysqli_query($connection, $subjectIP); //tested. working.
 
-if($debugMode == true) {
-    echo "<br>";
-    echo "Current SQLSTATE is: " . mysqli_sqlstate($connection);
-}
-
-if(isset($_SERVER['HTTP_REFERER'])) {
+if(isset($_SERVER['HTTP_REFERER'])) { // get referer if it exists
     if($debugMode == true) {
         echo "Client did send an http referer. Inserting into DB.";
     }
     $refererNonSanitized = $_SERVER['HTTP_REFERER'];
     $refererAlreadySanitized = htmlspecialchars($refererNonSanitized);
-    $refererAlreadySanitizedSQL = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('', '$refererAlreadySanitizedSQL', '', now());";
-    mysqli_query($connection, $refererAlreadySanitizedSQL);
 }
 else {
     if($debugMode == true) {
@@ -87,7 +65,21 @@ else {
         echo "Client did not send a referer. Either he is using xww.ro (or some other service) or he typed in the address directly. Not performing insertive query.";
     }
 }
+ 
+$createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
+$address = "$_SERVER['REMOTE_ADDR']"; // Fetch user's IP address
+mysqli_query($connection, $useDatabase);
+mysqli_query($connection, $createDatabase);
+$insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
+$sanitizedInsertLoc = mysqli_real_escape_string($connection, $insertLoc); // This isn't Injection prevention; just to escape special chars from dirnames, so its fine to use this altought it would be still dangerous for user input.
+$unifiedQuery = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
+VALUES ('$address', '$refererAlreadySanitized', '$sanitizedInsertLoc', now());"
+mysqli_query($connection, $unifiedQuery);
 
+if($debugMode == true) {
+    echo "<br>";
+    echo "Current SQLSTATE is: " . mysqli_sqlstate($connection);
+}
 
 mysqli_close($connection); // Closes the connection
 
