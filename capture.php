@@ -77,7 +77,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
     $refererNonSanitized = $_SERVER['HTTP_REFERER'];
     $refererAlreadySanitized = htmlspecialchars($refererNonSanitized);
     $refererAlreadySanitizedSQL = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('', 'dummydata', '', now());";
+VALUES ('', '$refererAlreadySanitizedSQL', '', now());";
     mysqli_query($connection, $refererAlreadySanitizedSQL);
 }
 else {
