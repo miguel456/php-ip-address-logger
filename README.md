@@ -14,7 +14,7 @@ Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
 
 
 # PHP Compatibility
-This program was developed and tested against PHP version 5.4.45. Any other versions are untested and the program may not work at all. If you whish to use this, please use only PHP version ´5.4.45´.
+This program was developed and tested against PHP version 5.4.45. Any other versions are untested and the program may not work at all. If you whish to use this, please use only PHP version ```5.4.45```.
 
 
 # php-ip-address-logger
