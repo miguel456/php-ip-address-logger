@@ -14,7 +14,6 @@
 
 require  'database.php';
 require_once 'config.php'; // DON'T CHANGE THIS REQUIRE_ONCE TO REQUIRE, IT WILL BREAK THE ENTIRE APP
-require 'errorcodesAndTitles.php';
 // Define all necessary variables for use, including some statements, but not all
 //FIXME: This doesn't work; try to fix first
 
@@ -31,8 +30,7 @@ if($debugMode == true) {
 $useDatabase = "USE iplogger;";
 $grabStuff = "SELECT * FROM whitelist LIMIT 10";
 $subjectIP = $_SERVER['REMOTE_ADDR'];
-$youAreWhitelisted = $siteTitles["whitelisted"];
-$whitelistedMsg = "We've detected that you're whitelisted, therefore we're not logging your address.";
+$youAreWhitelisted = "You're whitelisted, silly! We're not going to tell anyone..."
 mysqli_query($connection, $useDatabase); // May be obsolete but better safe than sorry (Tells the server to use that DB, database.php already does that)
 mysqli_query($connection, $grabStuff); // "SELECT * FROM whitelist LIMIT 10;";
 $result = mysqli_query($connection, $grabStuff);
@@ -40,7 +38,7 @@ $string = mysqli_fetch_array($result);
 $stringToSearch = $subjectIP;
 
 if(in_array($stringToSearch, $string)) {
-    exit($youAreWhitelisted . $whitelistedMsg);
+    exit($youAreWhitelisted);
 } 
 else {
     // nothin'
