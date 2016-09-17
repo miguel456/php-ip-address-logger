@@ -30,7 +30,7 @@ if($debugMode == true) {
 $useDatabase = "USE iplogger;";
 $grabStuff = "SELECT * FROM whitelist LIMIT 10";
 $subjectIP = $_SERVER['REMOTE_ADDR'];
-$youAreWhitelisted = "You're whitelisted, silly! We're not going to tell anyone..."
+$youAreWhitelisted = "You're whitelisted, silly! We're not going to tell anyone...";
 mysqli_query($connection, $useDatabase); // May be obsolete but better safe than sorry (Tells the server to use that DB, database.php already does that)
 mysqli_query($connection, $grabStuff); // "SELECT * FROM whitelist LIMIT 10;";
 $result = mysqli_query($connection, $grabStuff);
