@@ -40,7 +40,7 @@ $string = mysqli_fetch_array($result);
 $stringToSearch = $subjectIP;
 
 if(in_array($stringToSearch, $string)) {
-    exit($youAreWhitelisted . $whitelistMsg);
+    exit($youAreWhitelisted . $whitelistedMsg);
 } 
 else {
     // nothin'
