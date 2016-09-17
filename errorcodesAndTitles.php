@@ -15,7 +15,8 @@ $siteTitles = array(
 "troll" => "418 I'm a Teapot",
 "toomanyreqs" => "429 Too Many Requests",
 "legal" => "451 Unavailable for Legal Reasons",
-"windows-unofficial" => "450 Blocked by Windows Parental Controls"
+"windows-unofficial" => "450 Blocked by Windows Parental Controls",
+"whitelisted" => "You're whitelisted, silly!"
 );
 
 switch (behaviormode) {
