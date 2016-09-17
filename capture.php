@@ -67,7 +67,7 @@ else {
 }
  
 $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
-$address = "$_SERVER['REMOTE_ADDR']"; // Fetch user's IP address
+$address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
 mysqli_query($connection, $useDatabase);
 mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
