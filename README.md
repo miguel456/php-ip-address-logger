@@ -43,7 +43,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - ~~Interface for whitelisting addresses (After MySQL is done)~~  ON HOLD
 - ~~Add security support for apache (.htaccess)~~ Done, with MySQL support there is no need for a .htaccess 
 - ~~Make script silently handle errors without letting end-user know (the fallback is the error handling)~~ Done
-- Grab HTTP Headers and referrers, and filter them
+- ~~Grab HTTP~~ Headers and referrers, and filter them~~ Done
 - ~~Send a cookie with their information and make them send it back (Like statistics data)~~ DEVELOPMENT CANCELLED
 - ~~Idiot Mode~~ Done
 - Add web interface for easily whitelisting and "victim" retrieval, therefore not requiring technical knowledge.
