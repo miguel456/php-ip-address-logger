@@ -72,7 +72,7 @@ mysqli_query($connection, $useDatabase);
 mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__;
 $sanitizedInsertLoc = mysqli_real_escape_string($connection, $insertLoc); // This isn't Injection prevention; just to escape special chars from dirnames, so its fine to use this altought it would be still dangerous for user input.
-$sanitizedInsertLocSpecChars = $sanitizedInsertLoc;
+$sanitizedInsertLocSpecChars = htmlspecialchars($sanitizedInsertLoc);
 $unifiedQuery = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
 VALUES ('$address', '$refererAlreadySanitized', '$sanitizedInsertLocSpecChars', now());";
 mysqli_query($connection, $unifiedQuery);
