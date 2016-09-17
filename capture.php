@@ -55,7 +55,8 @@ else {
 $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
 $address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
 mysqli_query($connection, $useDatabase);
-$insertIP = "INSERT INTO `addresses` (`addresses`, `time`) VALUES ('$address', now());";
+$insertIP = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
+VALUES ('$address', '', '', now());";
 // $selectDatabase = "SELECT * FROM iplogger;"; (obsolete)
 mysqli_query($connection, $createDatabase);
 $insertLoc = __DIR__; //WARNING, CHANGES UNTESTED
