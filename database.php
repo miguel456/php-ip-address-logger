@@ -14,18 +14,33 @@
 * Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
 * 
 */
-require 'config.php';
+require 'config.php'; // needed for mysqli connection constants and user-option dieOrContinue.
 
 $connection = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
+$errorMessage = "Failed to connect to the database. Please put the right details to avoid your app being compromised"; // error message to be displayed 
 
-if(!$connection) {// Fall back to text logging and text whitelist retrieval if connection fails or throws an error
-    $errorMessage = "Failed to connect to the database. Please put the right details to avoid your app being compromised";
-    exit($errorMessage);
-    if ($debugMode == true) {
-        echo "Connection to the database was NOT successful. Falling back to regular logging methods (text). php_errors will have more errors than usual.";
+// TODO: Complete visual mess; cleanup
+if(!$connection) { // password wrong? no internet? echo debug messages and execute code based on user option (die or fallback).
+    if($debugMode == true) { // is it turned on? let user know that his password is wrong.
+        echo "<br>";
+        echo "WARNING: NO DATABASE CONNECTION HAS BEEN MADE";
+        echo "<br>";
+    }
+
+    if($dieOrContinue == "die") { // is it die? print debug messages if mode is turned on, then exit script.
+        
+        if($debugMode == true) { // TODO: Possible Bug; double-check where debug-mode begins to make sure DB connection won't affect its functionality.
+            echo "Script has been killed as there is no database connection.";
+        } // is it turned on? let user know script has been killed based on his choice.
+        
+        exit($errorMessage); // It will exit anyway; not dependent on debug mode logic statement.
+    }
+    else { // not "die"? make it fallback.
+        fallback() // function can be found at the bottom of capture.php file
+        // !! Fallback will generate a buch of errors, but it still does its job (MySQL code can't be executed, those are the errors)
     }
 }
-else {
+else { // connection successful? don't execute user-option code nor failure debug messages and tell him db connection was successful.
     if ($debugMode == true) {
         echo "<br>";
         echo "Connection to the database successful.";
