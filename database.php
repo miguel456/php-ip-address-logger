@@ -18,8 +18,9 @@ require 'config.php';
 
 $connection = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
 
-if(!$connection) { // Fall back to text logging and text whitelist retrieval if connection fails or throws an error
-    fallback(); // function defined on capture.php
+if(!$connection) {// Fall back to text logging and text whitelist retrieval if connection fails or throws an error
+    $errorMessage = "Failed to connect to the database. Please put the right details to avoid your app being compromised";
+    exit($errorMessage);
     if ($debugMode == true) {
         echo "Connection to the database was NOT successful. Falling back to regular logging methods (text). php_errors will have more errors than usual.";
     }
