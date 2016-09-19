@@ -15,6 +15,8 @@
 
 // Don't turn on unless you think there is something wrong
 $debugMode = false;
+$dieOrContinue = "die"; // Possible options: Die - Will kill script if no database connection is able to be made. continue: Will let script continue even if db connection was not made. Will log to a file.
+// Note to coders: No actual die() is used. Only exit().
 
 // *******************DATABASE CONNECTION INFORMATION - REQUIRES CHANGES**************
 
@@ -49,7 +51,6 @@ define("DB_PORT", "3306"); // Don't change unless your host has the db server on
 define("sitename", "My Awesome Website"); // Text to put on the title before error code (Ex. "sitename - error code")
 define("homepage", ""); // Reserved for future update (Unused as of now)
 define("behaviormode", "CHANGE THIS OR THE APP WILL USE 404"); // See the list above for a valid code
-define("dieOrContinue", "false"); // Decides whether the app will use legaacy functions when no DB connection is available. If false, script will be killed if no db connection is available.
 
 // ********************FALLBACK SETTINGS - UNUSED*****************************
 
