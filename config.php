@@ -8,7 +8,7 @@
 *
 * You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 * Full license: LICENSE.md within this repo.
-* Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
+* Author may be reached via e-mail: hello@worldofdiamondsmail.us.to
 */
 
 // *******************MISCELLANEOUS SETTINGS************
@@ -47,8 +47,9 @@ define("DB_PORT", "3306"); // Don't change unless your host has the db server on
 */
 
 define("sitename", "My Awesome Website"); // Text to put on the title before error code (Ex. "sitename - error code")
-define("homepage", ""); // Unused
+define("homepage", ""); // Reserved for future update (Unused as of now)
 define("behaviormode", "CHANGE THIS OR THE APP WILL USE 404"); // See the list above for a valid code
+define("dieOrContinue", "false"); // Decides whether the app will use legaacy functions when no DB connection is available. If false, script will be killed if no db connection is available.
 
 // ********************FALLBACK SETTINGS - UNUSED*****************************
 
@@ -58,6 +59,6 @@ define("Address3", "");
 define("Address4", "");
 define("Address5", "");
 
-//Note: The above settings will only work if the database connection has failed.
+//Note: The above settings will only work if dieOrContinue is true.
 
 ?>
