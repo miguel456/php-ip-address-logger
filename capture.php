@@ -107,37 +107,37 @@ function deleteBigFile() {
  * This function is called when no database connection is available. The function calls the legacy function subjectIsWhitelisted().
  * This function does exactly the same as the MySQL code above, in exception that it writes to a file as a direct result of
  * connecting to the database not being available.
+ * NOTE: This code will only be executed as per user option in the config file. They can either turn it off (which will kill the script if no DB conn is available)
+ * or turn it on, which will allow the script to keep running, but with errors.
  */
 
-/** function fallback() { // Formerly logAddress()
-  *  subjectIsWhitelistedLegacy();
-   * deleteBigFile();
-   * date_default_timezone_set('UTC');
-    *$getDate = date('l jS \of F Y h:i:s A');
-   * $logAddress = fopen('addresses.txt', 'a+'); // Open file
-    *fwrite($logAddress, $getDate . " - " . $_SERVER['REMOTE_ADDR']);
-    *fclose($logAddress);
-*}
-*
-*
-*function subjectIsWhitelistedLegacy() { // For exclusive use in this file only; shouldn't be called elsewhere
-   * $whitelisted = "You are whitelisted. Not logging address.";
-    *$getWhitelist = fopen('whitelist.txt', 'r');
-    *$readData = fread($getWhitelist, 40);
-    *fclose($getWhitelist);
-   * //Write your IP address in the place of 0.0.0.0
-    *switch ($readData) {
-        *case "0.0.0.0": //
-            *exit($whitelisted); // Prevent IP from being logged
-            *break;
-        *default:
-            * Move on, log that guy's address! But first, let him know.
-            *$intruder = "You shouldnt be here!";
-           * echo $intruder;
-            *echo "<br>";
-            *break;
-    *}
-*}
+function fallback() { // Formerly logAddress()
+    subjectIsWhitelistedLegacy();
+    deleteBigFile();
+    date_default_timezone_set('UTC');
+    $getDate = date('l jS \of F Y h:i:s A');
+    $logAddress = fopen('addresses.txt', 'a+'); // Open file
+    fwrite($logAddress, $getDate . " - " . $_SERVER['REMOTE_ADDR']);
+    fclose($logAddress);
+}
 
-*/
+
+function subjectIsWhitelistedLegacy() { // For exclusive use in this file only; shouldn't be called elsewhere
+    $whitelisted = "You are whitelisted. Not logging address.";
+    $getWhitelist = fopen('whitelist.txt', 'r');
+    $readData = fread($getWhitelist, 40);
+    fclose($getWhitelist);
+    //Write your IP address in the place of 0.0.0.0
+    switch ($readData) {
+        case "0.0.0.0": //
+            exit($whitelisted); // Prevent IP from being logged
+            break;
+        default:
+            // Move on, log that guy's address! But first, let him know.
+            $intruder = "You shouldnt be here!";
+            echo $intruder;
+            echo "<br>";
+            break;
+    }
+}
 ?>
