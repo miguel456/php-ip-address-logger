@@ -36,7 +36,7 @@ if(!$connection) { // password wrong? no internet? echo debug messages and execu
         exit($errorMessage); // It will exit anyway; not dependent on debug mode logic statement.
     }
     else { // not "die"? make it fallback.
-        fallback() // function can be found at the bottom of capture.php file
+        fallback(); // function can be found at the bottom of capture.php file
         // !! Fallback will generate a buch of errors, but it still does its job (MySQL code can't be executed, those are the errors)
     }
 }
