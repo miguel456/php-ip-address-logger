@@ -4,7 +4,7 @@ require_once 'database.php';
 
 session_start();
 
-$postData = array("username" => "$_POST['USERNAME']", "password" => "$_SERVER['PASSWORD']");
+$postData = array("username" => "$_POST['USERNAME']", "password" => "$_POST['PASSWORD']");
 
 $sanitizePostUntrustedDataUsername = htmlspecialchars($postData['username']);
 $injectionCounterMeasuresUsername = mysqli_real_escape_string($sanitizePostUntrustedDataUsername);
