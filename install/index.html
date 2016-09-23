@@ -1,2 +1,24 @@
 <!DOCTYPE HTML>
-<
+<html>
+  <head>
+    <title>Web Interface Setup</title>
+  </head>
+  <body>
+<p>Welcome to the installation page. Please fill in the form below for the creation of your master account. With it, you will be able to approve new user registrations and view, add/remove IP addresses<br>from the database, which is its main purpose. Your password is encrypted and salted with blowfish.<br>Your email address will be used to send you warnings in the case there were too many invalid logon attempts or too many entries from the same address.<br><em><strong>PLEASE DELETE THE "/install" DIRECTORY AFTER YOU ARE FINISHED!</strong></em></p>
+ 
+<form action="install.php" method="POST">
+  <fieldset>
+    <legend>Admin Login Details</legend>
+    Email Address:<br>
+    <input type="text" name="email" value="someone@example.com"><br>
+    Password:<br>
+    <input type="password" name="password" value="1234ddsdsds5"><br>
+    Real Name:<br>
+    <input type="text" name="name" value="John Doe"><br>
+    Username:<br>
+    <input type="text" name="username" value ="johnny"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form> 
+  </body>
+</html>
