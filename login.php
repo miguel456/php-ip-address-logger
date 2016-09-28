@@ -1,21 +1,36 @@
 <?php
-session_start();
+// login.php
+require_once 'config.php';
+$linebreak = "<br>";
 
-require 'config.php';
+if($debugMode == true) {
+	echo $linebreak;
+}
 
-?>
-<!doctype HTML>
-<html>
-  <head>
-    <title>Please Login Below</title>
-    <meta name="author" contents="miguel456">
-  </head>
-  <body>
-   <form>
-  First name:<br>
-  <input type="text" name="username"><br>
-  Last name:<br>
-  <input type="password" name="password">
-  </form>
-  </body>
-</html>
+switch($authMethod) { // decide which file to show, based on config value. Each file has session_start so it's not needed to put it here.
+	case "POST":
+	    if($debugMode == true) { // *1
+			echo $linebreak;
+			echo "Safest login method selected.";
+			echo $linebreak;
+		}
+		include('loginPOST.html');
+		break;
+	case "GET":
+	    if($debugMode == true) { // *1
+			echo $linebreak;
+			echo "WARNING: Your selected method " . $authMethod . " is very unsafe. We recommend switching to POST ASAP.";
+			echo $linebreak;
+		}
+		include('loginGET.html');
+		break;
+	default:
+        if($debugMode == true) { // *1
+			echo $linebreak
+			echo "WARNING: No valid login method is either selected or misspelled. Please re-check your config file and try again. Valid methods are: POST and GET.";
+			echo $linebreak;
+		}
+		break;
+}
+// *1 = show debug messages
+<?
