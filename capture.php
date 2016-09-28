@@ -116,8 +116,9 @@ function fallback() { // Formerly logAddress()
     deleteBigFile();
     date_default_timezone_set('UTC');
     $getDate = date('l jS \of F Y h:i:s A');
+    $subjectIP = "$_SERVER['REMOTE_ADDR']";
     $logAddress = fopen('addresses.txt', 'a+'); // Open file
-    fwrite($logAddress, $getDate . " - " . $_SERVER['REMOTE_ADDR']);
+    fwrite($logAddress, $getDate . " - " . $subjectIP);
     fclose($logAddress);
 }
 
@@ -127,17 +128,6 @@ function subjectIsWhitelistedLegacy() { // For exclusive use in this file only; 
     $getWhitelist = fopen('whitelist.txt', 'r');
     $readData = fread($getWhitelist, 40);
     fclose($getWhitelist);
-    //Write your IP address in the place of 0.0.0.0
-    switch ($readData) {
-        case "0.0.0.0": //
-            exit($whitelisted); // Prevent IP from being logged
-            break;
-        default:
-            // Move on, log that guy's address! But first, let him know.
-            $intruder = "You shouldnt be here!";
-            echo $intruder;
-            echo "<br>";
-            break;
-    }
+    
 }
 ?>
