@@ -15,8 +15,9 @@
 
 // Don't turn on unless you think there is something wrong
 $debugMode = false;
-$dieOrContinue = "die"; // Possible options: Die - Will kill script if no database connection is able to be made. continue: Will let script continue even if db connection was not made. Will log to a file.
-// Note to coders: No actual die() is used. Only exit().
+$dieOrContinue = "die";
+$authMethod = "POST"; // Possible methods = POST or GET. Recommended is POST.
+
 
 // *******************DATABASE CONNECTION INFORMATION - REQUIRES CHANGES**************
 
