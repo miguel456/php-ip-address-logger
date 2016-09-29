@@ -22,6 +22,11 @@ Log IP addresses simply without the need to check server logs; Useful for seeing
 
 This simple script will log someone's IP address upon visiting a page, to your database. ~~Can be repurposed to log something else by changing a few variables.~~
 
+# Third party sources
+- I am using a 3rd party source for this project's web interface. I will be using either UserCake, UserFrosting or UserApplePie. As I currently don't have the necessary expertise with using sessions (I will eventually), I have to rely on someone else's user project to secure the web interface pages.
+- The license for such third pary apps is theirs and not mine. This project's license, GNU GPLv3, does not cover such projects. 
+
+
 # Installation
 
 Simply drag and drop the scripts to the directory you want to log. ~~Rename from index.php to something else if you already have one, and then make something of yours point there.~~ 
