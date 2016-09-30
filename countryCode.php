@@ -10,7 +10,9 @@ function getCountryCode($hostnameOrIP) {
 	if($debug == true) {
 		echo "Retrieved country code:" . $countryCode;
 	}
+	// TODO: Cleanup and add exception handling in case $hostnameOrIP is empty or undefined
 	return $countryCode;
+	
 }
   
 ?>
