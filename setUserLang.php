@@ -1,9 +1,10 @@
 <?php
-require_once 'errorcodesAndTitles.php';
 require 'countryCode.php';
 require_once 'config.php';
 
 $nodebugFunc = getCountryCode($ipMethod, 0);
+$linebreak = "<br>"; // Time saver
+
 
 switch($nodebugFunc) {
   case "PT":
