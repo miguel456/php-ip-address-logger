@@ -17,7 +17,7 @@
 $debugMode = false;
 $dieOrContinue = "die"; // Possible options: Die - Will kill script if no database connection is able to be made. continue: Will let script continue even if db connection was not made. Will log to a file.
 // Note to coders: No actual die() is used. Only exit().
-$ipMethod = '$_SERVER["REMOTE_ADDR"]'; // Chose a custom method of retrieving the user's IP. Must return an absolute address (e.g. 120.120.102.20).
+$ipMethod = "$_SERVER[REMOTE_ADDR]"; // Chose a custom method of retrieving the user's IP. Must return an absolute address (e.g. 120.120.102.20).
 
 // *******************DATABASE CONNECTION INFORMATION - REQUIRES CHANGES**************
 
