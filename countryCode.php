@@ -1,6 +1,8 @@
 <?php
 // Get user's country code, for displaying multillingual webpages.
 
+require_once 'config.php';
+
 function getCountryCode($hostnameOrIP, $useDebug = "0") {
 	$linebreak = "<br>";
 	$apiUse = file_get_contents('https://freegeoip.net/json/' . $hostnameOrIP);
