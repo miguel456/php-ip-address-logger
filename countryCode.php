@@ -1,18 +1,28 @@
 <?php
 // Get user's country code, for displaying multillingual webpages.
 
-require_once 'config.php';
-
-function getCountryCode($hostnameOrIP) {
-	
-	$countryCode = geoip_country_code_by_name($hostnameOrIP);
-	global $debugMode = $debug; // may not work
-	if($debug == true) {
-		echo "Retrieved country code:" . $countryCode;
+function getCountryCode($hostnameOrIP, $useDebug = "0") {
+	$linebreak = "<br>";
+	$apiUse = file_get_contents('https://freegeoip.net/json/' . $hostnameOrIP);
+	$decodeJson = json_decode($apiUse, true);
+	if($useDebug == 1) {
+    	        echo $linebreak;
+    	        echo "Given IP's country code is: " . $decodeJson["country_code"] . ". Using to define language.";
+    	        echo $linebreak;
 	}
-	// TODO: Cleanup and add exception handling in case $hostnameOrIP is empty or undefined
-	return $countryCode;
-	
+	if(empty($decodeJson)) {
+		if($useDebug == 1) {
+			echo $linebreak;
+			echo "Unknown error: JSON may have not been decoded properly or API is down";
+			echo $linebreak;
+		}
+	}
+	return $decodeJson["country_code"];
 }
-  
+
+// function test
+if($debugMode == true) {
+	$MyTestIP = testIP;
+	echo getCountryCode($MyTestIP, 0);
+}
 ?>
