@@ -3,6 +3,14 @@
 
 require_once 'config.php';
 
+/**
+* 
+* Get country code for specified IP address.
+*
+* Ex. getCountryCode($anIpAddress, 1);
+* 1 will output debug messages (i.e. api down) while 0 will remain silent
+*
+*/
 function getCountryCode($hostnameOrIP, $useDebug = "0") {
 	$linebreak = "<br>";
 	$apiUse = file_get_contents('https://freegeoip.net/json/' . $hostnameOrIP);
@@ -24,7 +32,6 @@ function getCountryCode($hostnameOrIP, $useDebug = "0") {
 
 // function test
 if($debugMode == true) {
-	$MyTestIP = $ipMethod;
-	echo getCountryCode($MyTestIP, 0);
+	echo getCountryCode($ipMethod, 0);
 }
 ?>
