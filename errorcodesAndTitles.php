@@ -18,6 +18,16 @@ $siteTitles = array(
 "windows-unofficial" => "450 Blocked by Windows Parental Controls"
 );
 
+$possibleCountryCodes = array("Portuguese" => "PT",
+                              "USEnglish" => "US",
+                              "GBEnglish" => "GB",
+                              "Chinese" => "CN",
+                              "French" => "FR",
+                              "German" => "DE",
+                              "Russian" => "RU"
+                              );
+
+
 switch (behaviormode) {
     case "404":
         header('HTTP/1.1 404 Not Found');
