@@ -32,6 +32,6 @@ function getCountryCode($hostnameOrIP, $useDebug = "0") {
 
 // function test
 if($debugMode == true) {
-	echo getCountryCode($ipMethod, 0);
+	echo getCountryCode($ipMethod, 1);
 }
 ?>
