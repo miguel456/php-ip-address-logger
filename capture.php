@@ -116,7 +116,7 @@ function fallback() { // Formerly logAddress()
     deleteBigFile();
     date_default_timezone_set('UTC');
     $getDate = date('l jS \of F Y h:i:s A');
-    $subjectIP = "$_SERVER['REMOTE_ADDR']";
+    $subjectIP = '$_SERVER["REMOTE_ADDR"]';
     $logAddress = fopen('addresses.txt', 'a+'); // Open file
     fwrite($logAddress, $getDate . " - " . $subjectIP);
     fclose($logAddress);
