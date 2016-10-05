@@ -1,8 +1,8 @@
 <?php
 
 require 'capture.php'; // Script's heart (Vital file)
-require 'errorcodesAndTitles.php'; // Set this page's title and status code
-require_once 'config.php'; // Grab config values for statements below
+require 'errorcodesAndTitles.php'; // Set this page's title and status code, plus the error page
+require 'setUserLang.php'; // Set the user's language for the error pages
 
 // WARNING!!! DELETE THE HTML COMMENTS IF YOU WANT TO KEEP A LOW PROFILE! THEY ARE PUBLIC!
 
@@ -14,7 +14,7 @@ require_once 'config.php'; // Grab config values for statements below
 </head>
 <body>
 
-<!-- Add the HTML code corresponding to the mode you selected -->
+<!-- The error page will now be defined with the mode, don't put any code or you risk bugging it! -->
 
 </body>
 </html>
