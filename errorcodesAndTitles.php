@@ -115,7 +115,14 @@ switch (behaviormode) {
             include('statusPages/404.html'); // TODO: Change to FR filename
             break;
           default:
-            //no time
+            if($debugMode == true) {
+              echo "<br>";
+              echo "User doesn't have any configured language. Using english.";
+              echo "<br>";
+            }
+            header('HTTP/1.1 404 Not Found');
+            echo $titleBegin . sitename . $dash . $siteTitles["notfound"] . $titleEnd;
+            include('statusPages/404.html');
             break;
        }
     case "500":
