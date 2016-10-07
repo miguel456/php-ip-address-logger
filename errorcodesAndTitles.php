@@ -18,6 +18,61 @@ $siteTitles = array(
 "windows-unofficial" => "450 Blocked by Windows Parental Controls"
 );
 
+$siteTitlesPT = array(
+"notfound" => "404 Não Encontrado",
+"servererror" => "500 Erro de Servidor Interno",
+"movedpermanently" => "301 Movido Permanenentemente",
+"nocontent" => "204 Sem Conteúdo",
+"found" => "302 Encontrado",
+"tempredir" => "307 Redirecionamento Temporário",
+"permredir" => "308 Redirecionamento Permanente",
+"badreq" => "400 Pedido mal-feito",
+"unauthorized" => "401 Sem Autorização",
+"forbidden" => "403 Proíbido",
+"gone" => "410 Desaparecido",
+"troll" => "418 I'm a Teapot",
+"toomanyreqs" => "429 Demasiados Pedidos",
+"legal" => "451 Indisponível por razões legais",
+"windows-unofficial" => "450 Bloqueado pelos controlos parentais do Windows"
+);
+
+$siteTitlesCN = array(
+"notfound" => "404 未找到",
+"servererror" => "500 内部服务器错误",
+"movedpermanently" => "301 永久移动",
+"nocontent" => "204 无内容",
+"found" => "302 发现",
+"tempredir" => "307 临时重定向",
+"permredir" => "308 永久重定向",
+"badreq" => "400 错误的请求",
+"unauthorized" => "401 擅自",
+"forbidden" => "403 被禁止",
+"gone" => "410 消失",
+"troll" => "418 I'm a Teapot",
+"toomanyreqs" => "429 太多的请求",
+"legal" => "451 不可出于法律原因",
+"windows-unofficial" => "通过家长控制的Windows受阻"
+);
+
+$siteTitlesFR = array(
+"notfound" => "404 Introuvable",
+"servererror" => "500 Internal Server Error",
+"movedpermanently" => "301 déplacé Permanenentemente",
+"nocontent" => "204 Aucun contenu",
+"found" => "302 Trouvé",
+"tempredir" => "307 redirection temporaire",
+"permredir" => "308 redirection permanente",
+"badreq" => "400 Demande bâclée",
+"unauthorized" => "401 sans autorisation",
+"forbidden" => "403 interdit",
+"gone" => "410 disparu",
+"troll" => "418 I'm a Teapot",
+"toomanyreqs" => "429 trop nombreuses demandes",
+"legal" => "451 Non disponible pour des raisons juridiques",
+"windows-unofficial" => "450 Bloqué par contrôle parental de Windows"
+);
+
+
 $possibleCountryCodes = array("Portuguese" => "PT",
                               "USEnglish" => "US",
                               "GBEnglish" => "GB",
@@ -26,14 +81,43 @@ $possibleCountryCodes = array("Portuguese" => "PT",
                               "German" => "DE",
                               "Russian" => "RU"
                               );
-
+$lang = $_COOKIE["language"];
+$titleBegin = "<title>";
+$titleEnd = "</title>";
+$dash = "&ndash;";
 
 switch (behaviormode) {
-    case "404":
-        header('HTTP/1.1 404 Not Found');
-        echo "<title>" . sitename . " - " . $siteTitles["notfound"] . "</title>";
-        include('/statusPages/404.html');
-        break;
+    case "404": // set header, set title and serve status page
+        switch($lang) {
+          case "PT":
+            header('HTTP/1.1 404 Not Found');
+            echo "<title>" . sitename . " - " . $siteTitlesPT["notfound"] . "<title>";
+            include('/statusPages/404.html'); //TODO Change filename to correct language
+            break;
+          case "US":
+            header('HTTP/1.1 404 Not Found');
+            echo $titleBegin . sitename . $dash . $siteTitles["notfound"] . $titleEnd;
+            include('statusPages/404.html');
+            break;
+          case "GB":
+            header('HTTP/1.1 404 Not Found');
+            echo $titleBegin . sitename . $dash . $siteTitles["notfound"] . $titleEnd;
+            include('statusPages/404.html');
+            break;
+          case "CN":
+            header('HTTP/1.1 404 Not Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesCN["notfound"] . $titleEnd;
+            include('statusPages/404.html'); // TODO: Change to correct filename
+            break;
+          case "FR":
+            header('HTTP/1.1 404 Not Found');    
+            echo $titleBegin . sitename . $dash . $siteTitlesFR["notfound"] . $titleEnd;
+            include('statusPages/404.html'); // TODO: Change to FR filename
+            break;
+          default:
+            //no time
+            break;
+       }
     case "500":
         header('HTTP/1.1 500 Internal Server Error');
         echo "<title>" . sitename . " - " . $siteTitles["servererror"] . "</title>";
