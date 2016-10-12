@@ -126,7 +126,7 @@ $dash = "&ndash;";
 
 switch (behaviormode) {
     case "404": // set header, set title and serve status page
-        switch($lang) {
+        switch(lang) {
           case "PT":
             header('HTTP/1.1 404 Not Found');
             echo "<title>" . sitename . " - " . $siteTitlesPT["notfound"] . "<title>";
