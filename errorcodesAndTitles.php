@@ -114,6 +114,16 @@ switch (behaviormode) {
             echo $titleBegin . sitename . $dash . $siteTitlesFR["notfound"] . $titleEnd;
             include('statusPages/404.html'); // TODO: Change to FR filename
             break;
+          case "DE":
+            header('HTTP/1.1 404 Not Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesDE["notfound"] . $titleEnd;
+            include('statusPages/404.html');
+            break;
+          case "RU":
+            header('HTTP/1.1 404 Not Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesRU["notfound"] . $titleEnd;
+            include('statusPages/404.html');
+            break;
           default:
             if($debugMode == true) {
               echo "<br>";
