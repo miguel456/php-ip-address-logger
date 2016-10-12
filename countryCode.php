@@ -13,8 +13,7 @@ require_once 'config.php';
 */
 function getCountryCode($hostnameOrIP, $useDebug = "0") {
 	$linebreak = "<br>";
-	$context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
-	$apiUse = file_get_contents('https://freegeoip.net/json/' . $hostnameOrIP, false, $context);
+	$apiUse = file_get_contents('https://freegeoip.net/json/' . $hostnameOrIP, false);
 	$decodeJson = json_decode($apiUse, true);
 	if($useDebug == 1) {
     	        echo $linebreak;
