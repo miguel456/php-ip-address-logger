@@ -72,6 +72,44 @@ $siteTitlesFR = array(
 "windows-unofficial" => "450 Bloqué par contrôle parental de Windows"
 );
 
+$siteTitlesDE = array(
+"notfound" => "404 nicht gefunden",
+"servererror" => "500 Internal Server Error",
+"movedpermanently" => "301 Moved Permanently",
+"nocontent" => "204 Kein Inhalt",
+"found" => "302 Gefunden",
+"tempredir" => "307 Vorübergehende Umleitung",
+"permredir" => "308 Permanent Redirect",
+"badreq" => "400 Ungültige Anforderung",
+"unauthorized" => "401 Ungültige Anforderung",
+"forbidden" => "403 Verboten",
+"gone" => "410 gegangen",
+"troll" => "418 I'm a Teapot",
+"toomanyreqs" => "429 zu viele Anfragen",
+"legal" => "451 Aus rechtlichen Gründen nicht verfügbar",
+"windows-unofficial" => "450 Von Windows-Jugendschutz blockiert"
+);
+
+
+$siteTitlesRU = array(
+"notfound" => "404 nicht gefunden",
+"servererror" => "500 Внутренняя ошибка сервера",
+"movedpermanently" => "301 окончательно перемещено",
+"nocontent" => "204 нет содержимого",
+"found" => "302 Найдено",
+"tempredir" => "307 временная переадресация",
+"permredir" => "308 постоянное перенаправление",
+"badreq" => "400 Неверный запрос",
+"unauthorized" => "401 несанкционированное",
+"forbidden" => "403 запрещено",
+"gone" => "410 Gone",
+"troll" => "418 I'm a Teapot",
+"toomanyreqs" => "429 слишком много запросов",
+"legal" => "451 Недоступны по юридическим причинам",
+"windows-unofficial" => "450 Blocked by родительского контроля Windows"
+);
+
+
 
 $possibleCountryCodes = array("Portuguese" => "PT",
                               "USEnglish" => "US",
@@ -81,7 +119,7 @@ $possibleCountryCodes = array("Portuguese" => "PT",
                               "German" => "DE",
                               "Russian" => "RU"
                               );
-$lang = $_COOKIE["language"];
+define('lang', '$_COOKIE[language]');
 $titleBegin = "<title>";
 $titleEnd = "</title>";
 $dash = "&ndash;";
