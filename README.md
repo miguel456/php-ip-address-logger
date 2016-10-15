@@ -47,6 +47,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - ~~Make script silently handle errors without letting end-user know (the fallback is the error handling)~~ Done
 - ~~Grab HTTP Headers and referrers, and filter them~~ Done
 - ~~Idiot Mode Done~~ REMOVED
+- Add multi-language support for each error page (based on IP) - Halfway done
 - Add web interface for easily whitelisting and "victim" retrieval, therefore not requiring technical knowledge.
 
 --
