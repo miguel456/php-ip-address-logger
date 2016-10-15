@@ -119,10 +119,11 @@ $possibleCountryCodes = array("Portuguese" => "PT",
                               "German" => "DE",
                               "Russian" => "RU"
                               );
-define('lang', '$_COOKIE[language]');
 $titleBegin = "<title>";
 $titleEnd = "</title>";
 $dash = "&ndash;";
+define('lang', '$_COOKIE[language]');
+define("defaultmessage", "User doesn'\t have any defined language. Using english.");
 
 switch (behaviormode) {
     case "404": // set header, set title and serve status page
@@ -165,7 +166,7 @@ switch (behaviormode) {
           default:
             if($debugMode == true) {
               echo "<br>";
-              echo "User doesn't have any configured language. Using english.";
+              echo "User doesn't have any defined language. Using english.";
               echo "<br>";
             }
             header('HTTP/1.1 404 Not Found');
@@ -174,20 +175,149 @@ switch (behaviormode) {
             break;
        }
     case "500":
-        header('HTTP/1.1 500 Internal Server Error');
-        echo "<title>" . sitename . " - " . $siteTitles["servererror"] . "</title>";
-        include('/statusPages/500.html');
-        break;
+        switch(lang) {
+          case "PT":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitlesPT["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          case "US":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitles["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          case "GB":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitles["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          case "CN":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitlesCN["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          case "FR":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitlesFR["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          case "DE":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitlesDE["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          case "RU":
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitlesRU["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+          default:
+            if($debugMode == true) {
+              echo "<br>";
+              echo defaultmessage;
+              echo "<br>";
+            }
+            header('HTTP/1.1 500 Internal Server Error');
+            echo $titleBegin . sitename . $dash . $siteTitles["servererror"] . $titleEnd;
+            include('statusPages/500.html');
+            break;
+        }               
     case "301":
-        header('HTTP/1.1 301 Moved Permanently');
-        echo "<title>" . sitename . " - " . $siteTitles["movedpermanently"] . "</title>";
-        include('/statusPages/301.html');
-        break;
+        switch(lang) {
+          case "PT":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitlesPT["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          case "US":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitles["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          case "GB":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitles["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          case "CN":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitlesCN["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          case "FR":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitlesFR["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          case "DE":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitlesDE["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          case "RU":
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitlesRU["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+          default:
+            if($debugMode == true) {
+              echo "<br>";
+              echo defaultmessage;
+              echo "<br>";
+            }
+            header('HTTP/1.1 301 Moved Permanently');
+            echo $titleBegin . sitename . $dash . $siteTitles["movedpermanently"] . $titleEnd;
+            include('statusPages/301.html');
+            break;
+        }
     case "204":
-        header('HTTP/1.1 204 No Content');
-        echo "<title>" . sitename . " - " . $siteTitles["nocontent"] . "</title>";
-        include('/statusPages/204.html');
-        break;
+        switch(lang) {
+          case "PT":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitlesPT["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          case "US":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitles["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          case "GB":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitles["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          case "CN":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitlesCN"nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          case "FR":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitlesFR["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          case "DE":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitlesDE["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          case "RU":
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitlesrRU["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+          default:
+            if($debgMode == true) {
+              echo "<br>";
+              echo defaultmessage;
+              echo "<br>";
+            }
+            header('HTTP/1.1 204 No Content');
+            echo $titleBegin . sitename . $dash . $siteTitles["nocontent"] . $titleEnd;
+            include('statusPages/204.html');
+            break;
+        }      
     case "302":
         header('HTTP/1.1 302 Found');
         echo "<title>" . sitename . " - " . $siteTitles["found"] . "</title>";
@@ -253,6 +383,6 @@ switch (behaviormode) {
         include('/statusPages/404.html');
         if($debugMode == true) {
             echo "<br>";
-            echo "Warning: Unsupported behavior mode. Please change it to something valid, otherwise the errorcode will stay as default (404).";
+            echo "Error: Unsupported behavior mode. Please change it to something valid, otherwise the errorcode will stay as default (404).";
         }
 }
