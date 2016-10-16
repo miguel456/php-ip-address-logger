@@ -148,7 +148,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 404 Not Found');
             echo "<title>" . sitename . " - " . $siteTitlesPT["notfound"] . "<title>";
-            include('/statusPages/404.html'); //TODO Change filename to correct language
+            include('/statusPages/pt-PT/404.html'); //TODO Change filename to correct language
             break;
           case "US":
             header('HTTP/1.1 404 Not Found');
@@ -196,7 +196,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 500 Internal Server Error');
             echo $titleBegin . sitename . $dash . $siteTitlesPT["servererror"] . $titleEnd;
-            include('statusPages/500.html');
+            include('statusPages/pt-PT/500.html');
             break;
           case "US":
             header('HTTP/1.1 500 Internal Server Error');
@@ -244,7 +244,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 301 Moved Permanently');
             echo $titleBegin . sitename . $dash . $siteTitlesPT["movedpermanently"] . $titleEnd;
-            include('statusPages/301.html');
+            include('statusPages/pt-PT/301.html');
             break;
           case "US":
             header('HTTP/1.1 301 Moved Permanently');
@@ -292,7 +292,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 204 No Content');
             echo $titleBegin . sitename . $dash . $siteTitlesPT["nocontent"] . $titleEnd;
-            include('statusPages/204.html');
+            include('statusPages/pt-PT/204.html');
             break;
           case "US":
             header('HTTP/1.1 204 No Content');
@@ -325,7 +325,7 @@ switch (behaviormode) {
             include('statusPages/204.html');
             break;
           default:
-            if($debgMode == true) {
+            if($debugMode == true) {
               echo "<br>";
               echo defaultmessage;
               echo "<br>";
@@ -340,7 +340,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 302 Found');
             echo $titleBegin . sitename . $dash . $siteTitlesPT["found"] . $titleEnd;
-            include('statusPages/302.html');
+            include('statusPages/pt-PT/302.html');
             break;
           case "US":
             header('HTTP/1.1 302 Found');
@@ -389,7 +389,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 307 Temporary Redirect');
             echo $titleBegin . sitename . $dash . $siteTitlesPT["tempredir"] . $titleEnd;
-            include('statusPages/307.html');
+            include('statusPages/pt-PT/307.html');
             break;
           case "US":
             header('HTTP/1.1 307 Temporary Redirect');
