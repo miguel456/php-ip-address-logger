@@ -163,22 +163,22 @@ switch (behaviormode) {
           case "CN":
             header('HTTP/1.1 404 Not Found');
             echo $titleBegin . sitename . $dash . $siteTitlesCN["notfound"] . $titleEnd;
-            include('statusPages/404.html'); // TODO: Change to correct filename
+            include('statusPages/cn/404.html');
             break;
           case "FR":
             header('HTTP/1.1 404 Not Found');    
             echo $titleBegin . sitename . $dash . $siteTitlesFR["notfound"] . $titleEnd;
-            include('statusPages/404.html'); // TODO: Change to FR filename
+            include('statusPages/fr/404.html');
             break;
           case "DE":
             header('HTTP/1.1 404 Not Found');
             echo $titleBegin . sitename . $dash . $siteTitlesDE["notfound"] . $titleEnd;
-            include('statusPages/404.html');
+            include('statusPages/de/404.html');
             break;
           case "RU":
             header('HTTP/1.1 404 Not Found');
             echo $titleBegin . sitename . $dash . $siteTitlesRU["notfound"] . $titleEnd;
-            include('statusPages/404.html');
+            include('statusPages/ru/404.html');
             break;
           default:
             if($debugMode == true) {
@@ -211,22 +211,22 @@ switch (behaviormode) {
           case "CN":
             header('HTTP/1.1 500 Internal Server Error');
             echo $titleBegin . sitename . $dash . $siteTitlesCN["servererror"] . $titleEnd;
-            include('statusPages/500.html');
+            include('statusPages/cn/500.html');
             break;
           case "FR":
             header('HTTP/1.1 500 Internal Server Error');
             echo $titleBegin . sitename . $dash . $siteTitlesFR["servererror"] . $titleEnd;
-            include('statusPages/500.html');
+            include('statusPages/fr/500.html');
             break;
           case "DE":
             header('HTTP/1.1 500 Internal Server Error');
             echo $titleBegin . sitename . $dash . $siteTitlesDE["servererror"] . $titleEnd;
-            include('statusPages/500.html');
+            include('statusPages/de/500.html');
             break;
           case "RU":
             header('HTTP/1.1 500 Internal Server Error');
             echo $titleBegin . sitename . $dash . $siteTitlesRU["servererror"] . $titleEnd;
-            include('statusPages/500.html');
+            include('statusPages/ru/500.html');
             break;
           default:
             if($debugMode == true) {
@@ -259,22 +259,22 @@ switch (behaviormode) {
           case "CN":
             header('HTTP/1.1 301 Moved Permanently');
             echo $titleBegin . sitename . $dash . $siteTitlesCN["movedpermanently"] . $titleEnd;
-            include('statusPages/301.html');
+            include('statusPages/cn/301.html');
             break;
           case "FR":
             header('HTTP/1.1 301 Moved Permanently');
             echo $titleBegin . sitename . $dash . $siteTitlesFR["movedpermanently"] . $titleEnd;
-            include('statusPages/301.html');
+            include('statusPages/fr/301.html');
             break;
           case "DE":
             header('HTTP/1.1 301 Moved Permanently');
             echo $titleBegin . sitename . $dash . $siteTitlesDE["movedpermanently"] . $titleEnd;
-            include('statusPages/301.html');
+            include('statusPages/de/301.html');
             break;
           case "RU":
             header('HTTP/1.1 301 Moved Permanently');
             echo $titleBegin . sitename . $dash . $siteTitlesRU["movedpermanently"] . $titleEnd;
-            include('statusPages/301.html');
+            include('statusPages/ru/301.html');
             break;
           default:
             if($debugMode == true) {
@@ -307,22 +307,22 @@ switch (behaviormode) {
           case "CN":
             header('HTTP/1.1 204 No Content');
             echo $titleBegin . sitename . $dash . $siteTitlesCN"nocontent"] . $titleEnd;
-            include('statusPages/204.html');
+            include('statusPages/cn/204.html');
             break;
           case "FR":
             header('HTTP/1.1 204 No Content');
             echo $titleBegin . sitename . $dash . $siteTitlesFR["nocontent"] . $titleEnd;
-            include('statusPages/204.html');
+            include('statusPages/fr/204.html');
             break;
           case "DE":
             header('HTTP/1.1 204 No Content');
             echo $titleBegin . sitename . $dash . $siteTitlesDE["nocontent"] . $titleEnd;
-            include('statusPages/204.html');
+            include('statusPages/de/204.html');
             break;
           case "RU":
             header('HTTP/1.1 204 No Content');
             echo $titleBegin . sitename . $dash . $siteTitlesrRU["nocontent"] . $titleEnd;
-            include('statusPages/204.html');
+            include('statusPages/ru/204.html');
             break;
           default:
             if($debugMode == true) {
@@ -355,22 +355,22 @@ switch (behaviormode) {
           case "CN":
             header('HTTP/1.1 302 Found');
             echo $titleBegin . sitename . $dash . $siteTitlesCN["found"] . $titleEnd;
-            include('statusPages/302.html');
+            include('statusPages/cn/302.html');
             break;
           case "FR":
             header('HTTP/1.1 302 Found');
             echo $titleBegin . sitename . $dash . $siteTitlesFR["found"] . $titleEnd;
-            include('statusPages/302.html');
+            include('statusPages/fr/302.html');
             break;
           case "DE":
             header('HTTP/1.1 302 Found');
             echo $titleBegin . sitename . $dash . $siteTitlesDE["found"] . $titleEnd;
-            include('statusPages/302.html');
+            include('statusPages/de/302.html');
             break;
           case "RU":
             header('HTTP/1.1 302 Found');
             echo $titleBegin . sitename . $dash . $siteTitlesRU["found"] . $titleEnd;
-            include('statusPages/302.html');
+            include('statusPages/ru/302.html');
             break;
           default:
             if($debugMode == true) {
@@ -404,22 +404,22 @@ switch (behaviormode) {
           case "CN":
             header('HTTP/1.1 307 Temporary Redirect');
             echo $titleBegin . sitename . $dash . $siteTitlesCN["tempredir"] . $titleEnd;
-            include('statusPages/307.html');
+            include('statusPages/cn/307.html');
             break;
           case "FR":
             header('HTTP/1.1 307 Temporary Redirect');
             echo $titleBegin . sitename . $dash . $siteTitlesFR["tempredir"] . $titleEnd;
-            include('statusPages/307.html');
+            include('statusPages/fr/307.html');
             break;
           case "DE":
             header('HTTP/1.1 307 Temporary Redirect');
             echo $titleBegin . sitename . $dash . $siteTitlesDE["tempredir"] . $titleEnd;
-            include('statusPages/307.html');
+            include('statusPages/de/307.html');
             break;
           case "RU":
             header('HTTP/1.1 307 Temporary Redirect');
             echo $titleBegin . sitename . $dash . $siteTitlesRU["tempredir"] . $titleEnd;
-            include('statusPages/307.html');
+            include('statusPages/ru/307.html');
             break;
           default:
             if($debugMode == true) {
