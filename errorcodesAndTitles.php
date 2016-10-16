@@ -191,6 +191,7 @@ switch (behaviormode) {
             include('statusPages/404.html');
             break;
        }
+       break;
     case "500":
         switch(lang) {
           case "PT":
@@ -238,7 +239,8 @@ switch (behaviormode) {
             echo $titleBegin . sitename . $dash . $siteTitles["servererror"] . $titleEnd;
             include('statusPages/500.html');
             break;
-        }               
+        }
+        break;
     case "301":
         switch(lang) {
           case "PT":
@@ -287,6 +289,7 @@ switch (behaviormode) {
             include('statusPages/301.html');
             break;
         }
+        break;
     case "204":
         switch(lang) {
           case "PT":
@@ -334,7 +337,8 @@ switch (behaviormode) {
             echo $titleBegin . sitename . $dash . $siteTitles["nocontent"] . $titleEnd;
             include('statusPages/204.html');
             break;
-        }      
+        }
+        break;
     case "302":
         switch(lang) {
           case "PT":
@@ -383,7 +387,8 @@ switch (behaviormode) {
             include('statusPages/302.html');
             break;
             
-        }    
+        }
+        break;
     case "307":
         switch(lang) {
           case "PT":
@@ -431,7 +436,8 @@ switch (behaviormode) {
             echo $titleBegin . sitename . $dash . $siteTitles["tempredir"] . $titleEnd;
             include('statusPages/307.html');
             break;
-        }   
+        }
+        break;
     case "308":
         header('HTTP/1.1 308 Permanent Redirect');
         echo "<title>" . sitename . " - " . $siteTitles["permredir"] . "</title>";
@@ -489,4 +495,5 @@ switch (behaviormode) {
             echo "<br>";
             echo "Error: Unsupported behavior mode. Please change it to something valid, otherwise the errorcode will stay as default (404).";
         }
+        break;
 }
