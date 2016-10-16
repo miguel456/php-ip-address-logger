@@ -36,7 +36,7 @@ function getCountryCode($hostnameOrIP, $useDebug = "0") {
 			echo $linebreak;
 		}
 	}
-	return $response
+	return $response;
 }
 
 // function test
