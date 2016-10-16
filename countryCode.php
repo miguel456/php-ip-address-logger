@@ -12,22 +12,31 @@ require_once 'config.php';
 *
 */
 function getCountryCode($hostnameOrIP, $useDebug = "0") {
+	global $debugMode; // Variable globalization
+	define('ERROR_MESSAGE', 'Error: Could not read JSON returned from remote server!');
+	
 	$linebreak = "<br>";
 	$apiUse = file_get_contents('https://freegeoip.net/json/' . $hostnameOrIP, false);
-	$decodeJson = json_decode($apiUse, true);
-	if($useDebug == 1) {
-    	        echo $linebreak;
-    	        echo "Given IP's country code is: " . $decodeJson["country_code"] . ". Using to define language.";
+	$parse_response = json_decode($apiUse, true);
+	
+	$response = $parse_response["country_code"];
+	if(!defined('doubleconfirmation')) {
+		define('doubleconfirmation', 'UNDEFINED'); // Undefined is the same as YES
+	}
+	
+	if($debugMode == true && $usedebug = 1 || doubleconfirmation !== 'NO') { // double debug confirmation
+		echo $linebreak;
+    	        echo "Given IP's country code is: " . $response . ". Using to define language.";
     	        echo $linebreak;
 	}
-	if(empty($decodeJson)) {
-		if($useDebug == 1) {
+	if(empty($parse_response)) {
+		if($debugMode == true && $usedebug == 1 || doubleconfirmation == 'YES') {
 			echo $linebreak;
-			echo "Unknown error: JSON may have not been decoded properly or API is down";
+			echo ERROR_MESSAGE;
 			echo $linebreak;
 		}
 	}
-	return $decodeJson["country_code"];
+	return $response
 }
 
 // function test
