@@ -336,15 +336,102 @@ switch (behaviormode) {
             break;
         }      
     case "302":
-        header('HTTP/1.1 302 Found');
-        echo "<title>" . sitename . " - " . $siteTitles["found"] . "</title>";
-        include('/statusPages/302.html');
-        break;
+        switch(lang) {
+          case "PT":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesPT["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          case "US":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitles["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          case "GB":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitles["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          case "CN":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesCN["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          case "FR":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesFR["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          case "DE":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesDE["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          case "RU":
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitlesRU["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+          default:
+            if($debugMode == true) {
+              echo "<br>";
+              echo defaultmessage;
+              echo "<br>";
+            }
+            header('HTTP/1.1 302 Found');
+            echo $titleBegin . sitename . $dash . $siteTitles["found"] . $titleEnd;
+            include('statusPages/302.html');
+            break;
+            
+        }    
     case "307":
-        header('HTTP/1.1 307 Temporary Redirect');
-        echo "<title>" . sitename . " - " . $siteTitles["tempredir"] . "</title>";
-        include('/statusPages/307.html');
-        break;
+        switch(lang) {
+          case "PT":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitlesPT["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          case "US":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitles["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          case "GB":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitles["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          case "CN":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitlesCN["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          case "FR":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitlesFR["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          case "DE":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitlesDE["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          case "RU":
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitlesRU["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+          default:
+            if($debugMode == true) {
+              echo "<br>";
+              echo defaultmessage;
+              echo "<br>";
+            }
+            header('HTTP/1.1 307 Temporary Redirect');
+            echo $titleBegin . sitename . $dash . $siteTitles["tempredir"] . $titleEnd;
+            include('statusPages/307.html');
+            break;
+        }   
     case "308":
         header('HTTP/1.1 308 Permanent Redirect');
         echo "<title>" . sitename . " - " . $siteTitles["permredir"] . "</title>";
