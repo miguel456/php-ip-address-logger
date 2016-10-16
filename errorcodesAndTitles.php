@@ -306,7 +306,7 @@ switch (behaviormode) {
             break;
           case "CN":
             header('HTTP/1.1 204 No Content');
-            echo $titleBegin . sitename . $dash . $siteTitlesCN"nocontent"] . $titleEnd;
+            echo $titleBegin . sitename . $dash . $siteTitlesCN["nocontent"] . $titleEnd;
             include('statusPages/cn/204.html');
             break;
           case "FR":
