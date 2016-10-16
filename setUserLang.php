@@ -21,7 +21,7 @@ switch($nodebugFunc) {
       echo "User language is " . $nodebugFunc . ". Setting language to American English.";
       echo "<br>";
     }
-    setcookie("language", "en-US");
+    setcookie("language", "US");
     break;
   case "GB":
     if($debugMode == true) {
@@ -29,7 +29,7 @@ switch($nodebugFunc) {
       echo "User language is " . $nodebugFunc . ". Setting user language to British English.";
       echo "<br>";
     }
-    setcookie("language", "en-GB");
+    setcookie("language", "GB");
     break;
   case "CN":
     if($debugMode == true) {
