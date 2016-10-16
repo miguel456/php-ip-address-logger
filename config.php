@@ -30,7 +30,6 @@ define("DB_PORT", "3306"); // Don't change unless your host has the db server on
 // ************BEHAVIOR MODE SETTINGS****************
 
 /* Supported Behaviour Modes:
-* silent (Completely silent, 200 OK + redirect to main page - Warning! This setting is risky. The bot will be alarmed and if the criminal finds that this is an honeypot, you're screwed! (or not))
 * 404 (404 Not Found - Recommended setting!) 
 * 500 (Internal Server Error)
 * 301 (301 Moved Permanently)
