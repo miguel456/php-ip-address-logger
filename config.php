@@ -51,6 +51,7 @@ define("DB_PORT", "3306"); // Don't change unless your host has the db server on
 define("sitename", "My Awesome Website"); // Text to put on the title before error code (Ex. "sitename - error code")
 define("homepage", ""); // Reserved for future update (Unused as of now)
 define("behaviormode", "CHANGE THIS OR THE APP WILL USE 404"); // See the list above for a valid code
+define("doubleconfirmation", "YES"); // Debug double confirmation. May override manual setting.
 
 // ********************FALLBACK SETTINGS - UNUSED*****************************
 
