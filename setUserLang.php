@@ -5,6 +5,12 @@ require_once 'config.php';
 $nodebugFunc = getCountryCode($ipMethod, 0);
 $linebreak = "<br>"; // Time saver
 
+if($nodebugFunc == NULL && $debugMode == true) {
+  echo $linebreak;
+  echo "ERROR: The function that returns the countrycode did not return a value! Check above messages.";
+  echo $linebreak;
+}
+  
 
 switch($nodebugFunc) {
   case "PT":
@@ -69,10 +75,10 @@ switch($nodebugFunc) {
   default:
     if($debugMode == true) {
       echo $linebreak;
-      echo "User language was not recognised, using/setting default language (en-US).";
+      echo "User language was not recognised or was not given, using/setting default language (en-US).";
       echo $linebreak;
     }
-    setcookie("language", "en-US");
+    setcookie("language", "US");
     break;
 }
 
