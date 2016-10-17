@@ -28,7 +28,8 @@ function getCountryCode($hostnameOrIP, $useDebug = "0") {
 			echo $linebreak;
 			echo "ERROR: Your API key is either invalid or something is not working with the API. Translation features will NOT work.";
 			echo $linebreak;
-		return NULL; //If the array has an error message, of course it can't return any useful data. So Null is used.
+		}
+		return NULL;
 	}
 	
 	if(!defined('doubleconfirmation')) {
