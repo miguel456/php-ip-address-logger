@@ -120,7 +120,7 @@ $possibleCountryCodes = array("Portuguese" => "PT",
                               "Russian" => "RU"
                               );
 
-if(empty($_COOKIE[language])) { // Set a cookie if it hasn't been set yet. Unlikely to be set, unless API website is down.
+if(empty($_COOKIE['language'])) { // Set a cookie if it hasn't been set yet. Unlikely to be set, unless API website is down.
   if($debugMode == true) { // Furthermore, the language cookie should not be empty, as it has been called in the index file.
     echo "<br>";
     echo "WARN: Cookie is being set in language file. This means the API may be down, or the function that sets the cookie has failed.";
