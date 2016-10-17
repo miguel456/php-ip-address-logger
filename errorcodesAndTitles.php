@@ -119,7 +119,7 @@ $possibleCountryCodes = array("Portuguese" => "PT",
                               "German" => "DE",
                               "Russian" => "RU"
                               );
-
+//
 if(empty($_COOKIE['language'])) { // Set a cookie if it hasn't been set yet. Unlikely to be set, unless API website is down.
   if($debugMode == true) { // Furthermore, the language cookie should not be empty, as it has been called in the index file.
     echo "<br>";
