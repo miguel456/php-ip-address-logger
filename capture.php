@@ -39,9 +39,6 @@ $stringToSearch = $subjectIP;
 
 if(in_array($stringToSearch, $string)) {
     exit($youAreWhitelisted);
-} 
-else {
-    // nothin'
 }
 
 
@@ -57,14 +54,18 @@ if(isset($_SERVER['HTTP_REFERER'])) { // get referer if it exists
     }
     $refererNonSanitized = $_SERVER['HTTP_REFERER']; // put referer in a var for later use
     $refererAlreadySanitized = htmlspecialchars($refererNonSanitized); // Strip referer of any html tags
-    $refererAlreadySanitizedRealStr = mysqli_real_escape_string($refererAlreadySanitized); // escape any left-over special mysql elements
+    $refererAlreadySanitizedRealStr = mysqli_real_escape_string($connection, $refererAlreadySanitized); // escape any left-over special mysql elements
 }
-else {
-    if($debugMode == true) {
-        echo "<br>";
-        echo "Client did not send a referer. Either he is using xww.ro (or some other service) or he typed in the address directly. Not performing insertive query.";
-    }
+elseif($debugMode == true) {
+    echo "<br>";
+    echo "Client didn't send an http referer. The site has either been accessed directly or he/she is using a referer cleaner.";
+    echo "<br>";
+} else { // defines the variable in case the data necessary to define it above was not available (or didn't exist). This prevents the undefined variable warning.
+    if(!isset($refererAlreadySanitizedRealStr)) {
+        $refererAlreadySanitizedRealStr = NULL;
+    }   
 }
+    
  
 $createDatabase = "CREATE DATABASE IF NOT EXISTS iplogger;";
 $address = "$_SERVER[REMOTE_ADDR]"; // Fetch user's IP address
@@ -74,7 +75,7 @@ $insertLoc = __DIR__;
 $sanitizedInsertLoc = mysqli_real_escape_string($connection, $insertLoc); // This isn't Injection prevention; just to escape special chars from dirnames, so its fine to use this altought it would be still dangerous for user input.
 $sanitizedInsertLocSpecChars = htmlspecialchars($sanitizedInsertLoc);
 $unifiedQuery = "INSERT INTO `addresses` (`addresses`, `httpreferer`, `location`, `time`)
-VALUES ('$address', '$refererAlreadySanitized', '$sanitizedInsertLocSpecChars', now());";
+VALUES ('$address', '$refererAlreadySanitizedRealStr', '$sanitizedInsertLocSpecChars', now());";
 mysqli_query($connection, $unifiedQuery);
 
 if($debugMode == true) {
