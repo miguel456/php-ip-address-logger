@@ -15,7 +15,6 @@
 require  'database.php';
 require_once 'config.php'; // DON'T CHANGE THIS REQUIRE_ONCE TO REQUIRE, IT WILL BREAK THE ENTIRE APP
 // Define all necessary variables for use, including some statements, but not all
-//FIXME: This doesn't work; try to fix first
 
 if($debugMode == true) {
     ini_set('display_errors', 1);
