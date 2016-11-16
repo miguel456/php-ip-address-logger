@@ -128,7 +128,7 @@ $titleBegin = "<title>";
 $titleEnd = "</title>";
 $dash = "&ndash;";
 define("defaultmessage", "User doesn'\t have any defined language. Using english.");
-$countryCode = getCountryCode($ipmethod, 0);
+$countryCode = getCountryCode($ipmethod);
 switch (behaviormode) {
     case "404": // set header, set title and serve status page
         switch($countryCode) {
