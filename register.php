@@ -25,7 +25,8 @@ require 'config.php';
         Additional information:<br><br>
         <textarea name="addinfo" rows="5" col="50">
           Type in some additional information here such as why you are registering and by whom you were invited
-        </textarea>
+        </textarea><br>
+        <input type="submit" name="submit" value="Register"><br>
       </form>
     </div>
   </body>
