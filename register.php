@@ -17,11 +17,11 @@ require 'config.php';
       <br>
       <form action="register_user.php" method="POST">
         Username:<br>
-        <input type="text" name="username" value="urname12345" required><br>
+        <input type="text" name="username" value="" required><br>
         Password:<br>
-        <input type="text" name="password" value="12445" required><br>
+        <input type="password" name="password" value="" required><br>
         E-mail:<br>
-        <input type="email" name="email" value="myname@mydomain.com" required><br>
+        <input type="email" name="email" value="" required><br>
         Additional information:<br><br>
         <textarea name="addinfo" rows="5" col="50">
           Type in some additional information here such as why you are registering and by whom you were invited
