@@ -31,7 +31,7 @@ $escapedData_addinfo = mysqli_real_escape_string($connection, $dataset['addinfo'
 $hashedpassword = password_hash($escapeData_password, PASSWORD_BCRYPT);
 
 // insert user into the database
-mysqli_query($connection, "Use iplogger;";
+mysqli_query($connection, "Use iplogger;");
 $insertusers = "INSERT INTO `admins` (`admin_id`, `admin_username`, `admin_password`, `admin_email`, `permission_canApproveUsers`, `admin_realname`, `admin_addinfo`, `admin_saltpassphrase`, `approved`) VALUES ('', '$escapeData_username', '$hashedpassword', '$escapeData_email', '0', 'Not mentioned', '$escapeData_addinfo', '', 'no');";
 mysqli_query($connection, $insertusers);
 mysqli_close($connection);
