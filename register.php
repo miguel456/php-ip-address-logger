@@ -22,8 +22,8 @@ require 'config.php';
         <input type="text" name="password" value="12445" required><br>
         E-mail:<br>
         <input type="email" name="email" value="myname@mydomain.com" required><br>
-        Additional information:<br>
-        <textarea rows="5" col="50">
+        Additional information:<br><br>
+        <textarea name="addinfo" rows="5" col="50">
           Type in some additional information here such as why you are registering and by whom you were invited
         </textarea>
       </form>
