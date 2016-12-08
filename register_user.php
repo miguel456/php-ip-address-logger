@@ -25,7 +25,7 @@ elseif(!isset($dataset['addinfo'])) {
 $escapeData_username = mysqli_real_escape_string($connection, $dataset['username']);
 $escapeData_email = mysqli_real_escape_string($connection, $dataset['email']);
 $escapeData_password = mysqli_real_escape_string($connection, $dataset['password']);
-$escapedData_addinfo = mysqli_real_escape_string($connection, $dataset['addinfo']);
+$escapeData_addinfo = mysqli_real_escape_string($connection, $dataset['addinfo']);
 
 // hash the password
 $hashedpassword = password_hash($escapeData_password, PASSWORD_BCRYPT);
