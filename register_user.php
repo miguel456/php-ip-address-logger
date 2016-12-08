@@ -1,5 +1,4 @@
 <?php
-require_once 'config.php';
 require 'database.php';
 
 // Begin data validation
