@@ -33,6 +33,6 @@ $hashedpassword = password_hash($escapeData_password, PASSWORD_BCRYPT);
 
 // insert user into the database
 
-$insertusers = "INSERT INTO `admins` (`admin_id`, `admin_username`, `admin_password`, `admin_email`, `admin_realname`, `admin_saltpassphrase`, `approved`) VALUES (NULL, '$escapeData_username', '$hashedpassword', '$escapeData_email', 'Not provided', '', 'no');";
+$insertusers = "INSERT INTO `admins` (`admin_id`, `admin_username`, `admin_password`, `admin_email`, `permission_canApproveUsers`, `admin_realname`, `admin_addinfo`, `admin_saltpassphrase`, `approved`) VALUES ('', '$escapeData_username', '$hashedpassword', '$escapeData_email', '0', 'Not mentioned', '$escapeData_addinfo', '', 'no');";
 mysqli_query($connection, $insertusers);
 mysqli_close($connection);
