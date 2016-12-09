@@ -49,7 +49,11 @@ if(!in_array($userArray, $SANITIZE_loginDataset_username)) {
    
    $sess_id = rand(0, 100);
    $_SESSION['username'] = $SANITIZE_loginDataset_username;
-   echo "Welcome " . $_SESSION['username'] . "! Options: Go to IP dashboard ";
+   $_SESSION['id'] = $sess_id;
+   $_SESSION['isLoggedIn'] = true;
+  
+
+   echo "Welcome " . $_SESSION['username'] . "You can now access restricted webpages. ";
 } // session is ready to be used elsewhere!
   
          
