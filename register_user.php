@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'database.php';
 
 // Begin data validation
@@ -35,4 +36,5 @@ mysqli_query($connection, "Use iplogger;");
 $insertusers = "INSERT INTO `admins` (`admin_username`, `admin_password`, `admin_email`, `permission_canApproveUsers`, `admin_realname`, `admin_addinfo`, `admin_saltpassphrase`, `approved`) VALUES ('$escapeData_username', '$hashedpassword', '$escapeData_email', '0', 'Not mentioned', '$escapeData_addinfo', '', 'no');";
 mysqli_query($connection, $insertusers);
 mysqli_close($connection);
-echo '<p style="text-align=center">Registration has been completed successfully; Your administrator will approve your registration soon, assuming you are authorized by the owner(s) of this system/installation.</p>';
+echo "<!doctype HTML>";
+echo '<p align="center"><b>Registration has been completed successfully; Your administrator will approve your registration soon, assuming you are authorized by the owner(s) of this system/installation.</b></p>';
