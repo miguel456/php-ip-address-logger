@@ -14,3 +14,11 @@ function sessionAuthorize($username) { // possible vulnerablility detected
     return false;
   }
 }
+function isAuthorized() {
+  if($_COOKIE['loginAuthorized'] == true && $_SESSION['authorizedByEndCode'] == true) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
