@@ -19,6 +19,14 @@ This program was developed and tested against PHP version 5.4.45. Any other vers
 # Supported Webservers
 - Apache Foundation Webserver
 - ~~Microsoft IIS~~ - No longer supported due to ASP.NET problems with REST
+- IBM Http server
+- LiteSpeed Webserver
+- nginx
+- And all other available webservers, besides Windows based servers (i.e. IIS)
+
+# Broken features warning
+The admin panel feature is currently non-function and unfinished. I recommend not using it until further notice.
+
 
 # php-ip-address-logger
 Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. This is a low interaction honeypot and you may set up multiple directores with several installations. Communication between them is a planned feature (See [Releases](https://git.io/v6hjp "Releases") for a list of planned features + pre-releases) as well as URL reporting when multiple are installed.
