@@ -15,7 +15,7 @@ require_once '../../config.php';
       <p style="font-weight: bold">If you wish to become an authorized user, please <a href="mailto:<?php echo site_webmaster_email ?>">send us an email!</a></p>
       <br>
       <br>
-      <form action="/new" method="POST">
+      <form action="<?php echo domainRoot . "/" . appRoot . "/admin/register/new" ?>" method="POST">
         Username:<br>
         <input type="text" name="username" value="" required><br>
         Password:<br>
