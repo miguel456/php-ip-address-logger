@@ -3,7 +3,7 @@
 require_once '../config.php';
 session_start();
 
-if($_SESSION['isLoggedIn'] == false && !isset($_COOKIE['loginAuthorized']) && $_SESSION['authorizedByEndCode'] == null) {
+if($_SESSION['isLoggedIn'] == true && isset($_COOKIE['loginAuthorized']) && $_SESSION['authorizedByEndCode'] == true) {
          header("HTTP/1.1 400 Bad Request");
          header("Location: " . domainRoot . "/" . appRoot . "/admin/login");
 } elseif($_SESSION['isLoggedIn'] == true) {
