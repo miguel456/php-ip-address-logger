@@ -1,3 +1,4 @@
+<?php
 session_start();
 require '../../../database.php';
 // Begin data validation
