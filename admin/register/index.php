@@ -1,5 +1,13 @@
 <?php
+session_start();
+if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true && $_SESSION['authorizedByEndCode'] == true && $_COOKIE['loginAuthorized'] == true){
+  //user is already logged in, prevent registering again unless logged out
+  header("HTTP/1.1 400 Bad Request");
+  header('Location: ' . domainRoot . '/' . appRoot . '/admin');
+}
 require_once '../../config.php';
+
+
 ?>
 
 <!doctype HTML>
