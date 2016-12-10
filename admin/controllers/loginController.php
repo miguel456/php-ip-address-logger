@@ -10,7 +10,7 @@ function sessionAuthorize($username) { // possible vulnerablility detected
     setcookie("loginAuthorized", "true"); 
     return true;
   }
-  else
+  else {
     return false;
   }
 }
