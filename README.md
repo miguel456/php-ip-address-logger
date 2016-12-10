@@ -42,6 +42,7 @@ Use of the web-interface branch is not supported as it is under constant develop
 
 Simply drag and drop the scripts to the directory you want to log. ~~Rename from index.php to something else if you already have one, and then make something of yours point there.~~ 
 Then, import the SQL file to your database and fill in its login details in the config file.
+**IMPORTANT!** You must configure every line of the config.php file, otherwise the app **WILL** not work!
 
 # Uses 
 I originally created this as I was getting too many 404's to non-existent locations, such as phpMyAdmin or PMA. So, as there was no similar software to do this,
@@ -77,6 +78,3 @@ To keep someone from having their address sent to the DB, simply insert their nu
 # Bugs, errors or feature suggestions/improvements
 Report all bugs you find (Although I think there are none at the moment), leave suggestions or improvement requests in a ticket. You can also start a pull request for a new feature/improvement and I'll look into it.
 
-# Security
-~~Warning! The scripts create two files named addresses.txt and whitelist.txt. YOU MUST define a hidden segment in filtering rules (IIS Users) for both of them, or create a .htaccess file doing so (Apache users). Note that I DO NOT support Apache~~
-At the moment, there are no security concerns. There are, however, if you fail to fill in the db details.
