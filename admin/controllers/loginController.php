@@ -24,6 +24,6 @@ function isAuthorized() {
 function accessVerify(){
   if(isAuthorized() !== true) {
     header("HTTP/1.1 403 Forbidden");
-    exit('<h1 align="center">Access denied: You must login to view this page.</h1>');
+    header("Location: index.php");
   }
 }
