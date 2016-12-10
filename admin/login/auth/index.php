@@ -42,5 +42,5 @@ if(!in_array($userArray, $SANITIZE_loginDataset_username)) {
    $_SESSION['username'] = $SANITIZE_loginDataset_username;
    $_SESSION['id'] = $sess_id;
    $_SESSION['isLoggedIn'] = true;
-   header("Location: /admin");
+   header("Location: " . domainRoot . "/" . appRoot . "/admin");
 } // session is ready to be used elsewhere!
