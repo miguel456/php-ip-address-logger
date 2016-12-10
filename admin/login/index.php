@@ -12,7 +12,7 @@ require_once '../../config.php';
 	<h1>Access is reserved to restricted users only! If you wish to become an authorized user, please <a href="mailto:<?php echo site_webmaster_email ?>">send us an email!</a></h1>
     <h3><?php echo sitename ?> IP management System &ndash; Login</h3>
     <br>
-    <form name="login" method="POST" action="<?php echo domainRoot; echo appRoot;?>/admin/login/auth"><br>
+    <form name="login" method="POST" action="<?php echo domainRoot . "/" . appRoot;?>/admin/login/auth"><br>
       Username:
       <input type="text" name="username" value="" required><br>
       Password:
