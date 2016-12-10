@@ -37,14 +37,10 @@ if(!in_array($userArray, $SANITIZE_loginDataset_username)) {
     $loginAttempts = 0;
     $loginAttempts++;
     setcookie("failedLoginAttempts", $loginAttempts);
-} else {
-   header("HTTP/1.1 200 OK");
-   echo "Logging in...";
-   
+} else {   
    $sess_id = rand(0, 100);
    $_SESSION['username'] = $SANITIZE_loginDataset_username;
    $_SESSION['id'] = $sess_id;
    $_SESSION['isLoggedIn'] = true;
-  
-   echo "Welcome " . $_SESSION['username'] . "You can now access restricted webpages. ";
+   header("Location: /admin");
 } // session is ready to be used elsewhere!
