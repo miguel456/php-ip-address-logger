@@ -1,29 +1,101 @@
--- Adminer 4.2.5 MySQL dump
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: 11-Dez-2016 às 01:14
 
-SET NAMES utf8;
-SET time_zone = '+00:00';
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-DROP DATABASE IF EXISTS `iplogger`;
-CREATE DATABASE `iplogger` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `iplogger`;
 
-DROP TABLE IF EXISTS `addresses`;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `iplogger`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `addresses`
+--
+
 CREATE TABLE `addresses` (
-  `id` bigint(50) NOT NULL AUTO_INCREMENT,
+  `id` bigint(50) NOT NULL,
   `addresses` varchar(255) NOT NULL,
   `httpreferer` varchar(255) NOT NULL,
   `location` varchar(255) NOT NULL,
-  `time` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  PRIMARY KEY (`id`)
+  `time` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP
+) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(20) NOT NULL,
+  `admin_username` varchar(30) NOT NULL,
+  `admin_password` varchar(256) NOT NULL,
+  `admin_email` varchar(50) NOT NULL,
+  `permission_canApproveUsers` tinyint(1) NOT NULL,
+  `admin_realname` varchar(77) NOT NULL,
+  `admin_addinfo` text NOT NULL,
+  `admin_saltpassphrase` varchar(100) NOT NULL,
+  `approved` varchar(3) NOT NULL DEFAULT 'no'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `whitelist`;
+--
+-- Estrutura da tabela `whitelist`
+--
+
 CREATE TABLE `whitelist` (
-  `id` mediumint(20) NOT NULL AUTO_INCREMENT,
-  `address` varchar(200) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id` mediumint(20) NOT NULL,
+  `address` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Indexes for dumped tables
+--
 
--- 2016-09-16 22:58:45
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `whitelist`
+--
+ALTER TABLE `whitelist`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `addresses`
+--
+ALTER TABLE `addresses`
+  MODIFY `id` bigint(50) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `whitelist`
+--
+ALTER TABLE `whitelist`
+  MODIFY `id` mediumint(20) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
