@@ -16,6 +16,8 @@ require  'database.php';
 require_once 'config.php'; // DON'T CHANGE THIS REQUIRE_ONCE TO REQUIRE, IT WILL BREAK THE ENTIRE APP
 // Define all necessary variables for use, including some statements, but not all
 
+// TODO: Turn into object oriented PHP and enhance the code's quality, plus release some updates
+
 if($debugMode == true) {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
