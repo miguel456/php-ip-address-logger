@@ -27,9 +27,8 @@ This program was developed and tested against PHP version 5.4.45. Any other vers
 # Broken features warning
 The admin panel feature is currently non-function and unfinished. I recommend not using it until further notice.
 
-# 0$ Price tag update
-Due to the time I spend in the development of this PHP application, I decided that I needed some money in return. PHP IP Address Logger will no longer be free by December 20th, and security and feature updates will cease happening (For the free version). The paid version will be available for ´´8.99$´´, a one-time license. Licenses may only be used on a single webserver. Support is not included on the paid version, but you may get on a subscription model for as low as ´´4.99$/mo´´.
-The first ever released version of this software will still be available for free, under the ´´Apache License 2.0´´.
+# Codebase rwrite
+The codebase will be completely rewritten to object oriented PHP. Current progress: 0%.
 
 # php-ip-address-logger
 Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. This is a low interaction honeypot and you may set up multiple directores with several installations. Communication between them is a planned feature (See [Releases](https://git.io/v6hjp "Releases") for a list of planned features + pre-releases) as well as URL reporting when multiple are installed.
