@@ -9,22 +9,14 @@ You should have received a copy of the GNU General Public License along with thi
 Full license: LICENSE.md within this repo.
 Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
 
-
-# Inactive
-This project is currently inactive. I am not going to continue development on this one and it's code is very buggy and messy, and not object oriented. The OO porting is also not going to happen. I am going to release one final version before abandoning this.
-
+**I've decided to re-pick on this project and port it to OO, as well as fix some beginner-level mistakes.
 
 
 # PHP Compatibility
 This program was developed and tested against PHP version 5.4.45. Any other versions are untested and the program may not work at all. If you whish to use this, please use only PHP version ```5.4.45```.
 
 # Supported Webservers
-- Apache Foundation Webserver
-- ~~Microsoft IIS~~ - No longer supported
-- IBM Http server
-- LiteSpeed Webserver
-- nginx
-- And all other available webservers, besides Windows based servers (i.e. IIS)
+- Pretty much everything that runs on Unix or Linux. WINDOWS IS NOT SUPPORTED.
 
 # Broken features warning
 The admin panel feature is currently non-function and unfinished. I recommend not using it until further notice.
