@@ -128,7 +128,31 @@ $titleBegin = "<title>";
 $titleEnd = "</title>";
 $dash = "&ndash;";
 define("defaultmessage", "User doesn'\t have any defined language. Using english.");
-$countryCode = getCountryCode($ipmethod);
+
+try 
+{
+  
+  $countryCode = getCountryCode($_SERVER['REMOTE_ADDR']);
+  
+}
+catch (IllegalStateException $e)
+{
+  if ($debugMode == true)
+  {
+    echo "<br>";
+    echo "<h1>Fatal API error: Could not retrieve information: " . $e->getMessage();
+    echo "<br>";
+    $countryCode = "US";
+    
+  }
+  else
+  {
+    
+      $countryCode = "US";
+    
+  }
+}
+
 switch (behaviormode) {
     case "404": // set header, set title and serve status page
         switch($countryCode) {
