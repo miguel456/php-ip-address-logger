@@ -8,28 +8,31 @@ require_once 'config.php';
 * Get country code for specified IP address.
 *
 * Ex. getCountryCode($anIpAddress, 1);
-* 1 will output debug messages (i.e. api down) while 0 will remain silent
+* Returns true or false based on success
 *
 */
-function getCountryCode($hostnameOrIP) {
+function getCountryCode($hostnameOrIP)
+{
+	$ch = curl_init();
 	
-	if(empty($hostnameOrIP)) {
-		return null;
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'PHPIPAddressLogger/Alpha1.2.1');
+	
+	curl_setopt($ch, CURLOPT_URL, "http://api.db-ip.com/v2/" . API_KEY . "/$hostnameOrIP");
+	
+	$response = curl_exec($ch);
+	$json_response = json_decode($response, true);
+	
+	if(isset($json_response['error']))
+	{
+		throw new IllegalStateException("An error has ocurred whilst attempting to retrieve IP address info: " . $json_response['error']);	
 	}
-	$error = "invalid"; // if response body contains this, abort
-	$apiUse = file_get_contents('http://api.db-ip.com/v2/' . apiKey . '/' .  $hostnameOrIP, false);
-	$parseResponse = json_decode($apiUse, true);
 	
-	if(in_array($error, $parseResponse)) {
-		return null;
-	}
+	return $json_response['countryCode'];
 	
-	$response = $parseResponse["countryCode"];
+	curl_close($ch);
 	
-	if(empty($parseResponse)) {
-		return NULL;
-	}
-	return $response;
 }
 
 ?>
