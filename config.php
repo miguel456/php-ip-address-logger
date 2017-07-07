@@ -52,7 +52,7 @@ define("site_webmaster_email", "myname@mysite.com");
 define("homepage", ""); // Reserved for future update (Unused as of now)
 define("behaviormode", "CHANGE THIS OR THE APP WILL USE 404"); // See the list above for a valid code
 define("doubleconfirmation", "YES"); // Debug double confirmation. May override manual setting.
-define("apiKey", ""); // You must provide a valid API key. without it, the script will not translate the error pages.
+define("API_KEY", ""); // You must provide a valid API key. without it, the script will not translate the error pages.
 define("domainRoot", "http://example.com"); // your website's address (YOU MUST have the protocol prepended!)
 define("appRoot", "myapps/mysite/php-ip-address-logger"); // must be the name of a folder
 
