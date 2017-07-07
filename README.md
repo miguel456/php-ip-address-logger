@@ -7,7 +7,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 Full license: LICENSE.md within this repo.
-Author may be reached via e-mail: miguel456@worldofdiamondsmail.us.to
+Author may be reached via e-mail: miguel456@survival-infinity.ga
 
 **I've decided to re-pick on this project and port it to OO, as well as fix some beginner-level mistakes.
 
