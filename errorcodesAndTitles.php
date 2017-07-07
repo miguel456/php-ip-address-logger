@@ -159,7 +159,7 @@ switch (behaviormode) {
           case "PT":
             header('HTTP/1.1 404 Not Found');
             echo "<title>" . sitename . " - " . $siteTitlesPT["notfound"] . "<title>";
-            include('/statusPages/pt-PT/404.html'); //TODO Change filename to correct language
+            include(__DIR__ . '/statusPages/pt-PT/404.html'); //TODO Change filename to correct language
             break;
           case "US":
             header('HTTP/1.1 404 Not Found');
