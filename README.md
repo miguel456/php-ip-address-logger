@@ -42,10 +42,6 @@ Then, import the SQL file to your database and fill in its login details in the 
 I originally created this as I was getting too many 404's to non-existent locations, such as phpMyAdmin or PMA. So, as there was no similar software to do this,
 I decided to go ahead and write this, and set up an honeypot. This way, I know their address without going through thousands of entries in the log.
 
--- 
-If you want to, you can use this code as a base to log something; it's up to you.
-Note that I am an absolute beginner and this is my first ever repo. I don't even know if there are useful use cases other than an honeypot, and this may even be obsolete. I didn't find anything similar to use!
---
 
 # Upcoming Features
 - ~~Logging to MySQL~~ Done
@@ -55,7 +51,7 @@ Note that I am an absolute beginner and this is my first ever repo. I don't even
 - ~~Make script silently handle errors without letting end-user know (the fallback is the error handling)~~ Done
 - ~~Grab HTTP Headers and referrers, and filter them~~ Done
 - ~~Idiot Mode Done~~ REMOVED
-- Add multi-language support for each error page (based on IP) - Halfway done
+-  ~~Add multi-language support for each error page (based on IP)~~ DONE
 - Add web interface for easily whitelisting and "victim" retrieval, therefore not requiring technical knowledge.
 
 --
