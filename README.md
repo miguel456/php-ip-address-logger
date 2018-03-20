@@ -7,10 +7,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 Full license: LICENSE.md within this repo.
-Author may be reached via e-mail: miguel456@survival-infinity.ga
+Author may be reached via e-mail: ~~miguel456@survival-infinity.ga~~
 
-**I've decided to re-pick on this project and port it to OO, as well as fix some beginner-level mistakes.
+~~**I've decided to re-pick on this project and port it to OO, as well as fix some beginner-level mistakes.~~
 
+** THIS PROJECT HAS BEEN DISCONTINUED. DOWNLOAD AT OWN RISK. **
 
 # PHP Compatibility
 This program was developed and tested against PHP version 5.4.45. Any other versions are untested and the program may not work at all. If you whish to use this, please use only PHP version ```5.4.45```.
@@ -25,7 +26,7 @@ The admin panel feature is currently non-function and unfinished. I recommend no
 # php-ip-address-logger
 Log IP addresses simply without the need to check server logs; Useful for seeing who accessed a page at what time. This is a low interaction honeypot and you may set up multiple directores with several installations. Communication between them is a planned feature (See [Releases](https://git.io/v6hjp "Releases") for a list of planned features + pre-releases) as well as URL reporting when multiple are installed.
 
-Quick note: Most of this project is PHP. The only HTML content here is the fake error pages and their translated counterparts, that's why HTML percentage is bigger than PHP's. Don't listen to GitHub's math! :P
+~~Quick note: Most of this project is PHP. The only HTML content here is the fake error pages and their translated counterparts, that's why HTML percentage is bigger than PHP's. Don't listen to GitHub's math!~~
 
 This ~~simple~~ script will log someone's IP address upon visiting a page, to your database. ~~Can be repurposed to log something else by changing a few variables.~~
 
